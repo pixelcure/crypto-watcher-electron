@@ -7,13 +7,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Action Creators
-import { fetchCost } from '../../../actions/cryptoCurrencyActions'
+import { fetchCost } from '../../actions/cryptoCurrencyActions'
 
 
 
 // mapDispatchToProps
 const mapDispatchToProps = (dispatch) => {
-	fetchCost
+	return {
+		fetchCost
+	}
 }
 
 // mapStateToProps
@@ -28,7 +30,8 @@ class CostFetch extends Component {
 	render() {
 		return(
 			<div>
-				<button onClick={() => this.props.fetchCost('LTC','USD,EUR')}>
+				<h1>Litecoin:</h1>
+				<button onClick={this.props.fetchCost('LTC','USD,EUR')}>
 					Fetch
 				</button>
 	 	 	</div>
