@@ -1,0 +1,20 @@
+{
+  "name": "cryto-watcher-electron",
+  "version": "0.1.0",
+  "description": "This is a desktop app that will watch and monitor various crytocurrencies via coincap.io. This project was built using Electron, React, Redux, SCSS, Create React App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "",
+  "keywords": [
+    "Electron"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.6.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}

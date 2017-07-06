@@ -1,0 +1,211 @@
+  ////////////////////////////////
+ // MIXINS //////////////////////
+////////////////////////////////
+
+
+
+//Mixin to easily add a device orientation media query. Ex. @include orientation(portrait){display: none;}
+@mixin orientation($point) {
+  @if $point == landscape {
+	@media only screen and (orientation: landscape){
+		@content;
+	}
+  }@else if $point == portrait{
+	@media only screen and (orientation: portrait){
+		@content;
+	}
+  }
+}
+
+// Device Viewport Sizes
+$small-screen: 240px;
+$medium-screen: 640px;
+$large-screen: 1024px;
+
+@mixin device-size($media) {
+  @if $media == mobile {
+	@media only screen and (min-width: $small-screen) and (max-width: $medium-screen) { @content; }
+  }
+  @else if $media == tablet {
+	@media only screen and (min-width: $medium-screen + 1) and (max-width: $large-screen) { @content; }
+  }
+
+  @else if ($media == tablet-and-mobile) or ($media == mobile-and-tablet) {
+	@media only screen and (max-width: $large-screen) { @content; }
+  }
+
+  @else if $media == desktop {
+	@media only screen and (min-width: $large-screen + 1) { @content; }
+  }
+
+  @else if ($media == tablet-and-desktop) or ($media == desktop-and-tablet)  {
+	@media only screen and (min-width: $medium-screen) { @content; }
+  }
+}
+
+// Set type size and baseline grid on the root element.
+@mixin establish-baseline {
+	html {
+		$new-font-size: $base-font-size / $browser-default-font-size * 100%;	// eg. 16px ÷ 16px * 100%
+		// Only set the font size if it differs from the browser default
+		@if $new-font-size != 100% {
+			font-size: $new-font-size;
+		}
+		@include set-leading(1);
+	}
+}
+
+// Set the font size to the specified number of pixels while
+// maintaining the vertical rhythm.
+//
+// $to-size - Desired font size, in pixels
+// $lines   - Desired leading, expressed in baselines (can fractional)
+@mixin set-font-size($to-size, $lines: lines-for-font-size($to-size)) {
+	@include px-to-rem(font-size, $to-size);
+	@include set-leading($lines);
+}
+
+// Adjust the leading to a new multiple of the baseline
+@mixin set-leading($lines) {
+	@include px-to-rem(line-height, $base-line-height * $lines);
+}
+
+// Apply leading whitespace
+@mixin leader($lines: 1, $property: margin) {
+	@include px-to-rem(#{$property}-top, rhythm($lines));
+}
+
+// Apply trailing whitespace
+@mixin trailer($lines: 1, $property: margin) {
+	@include px-to-rem(#{$property}-bottom, rhythm($lines));
+}
+
+// Apply leading whitespace as padding
+@mixin padding-leader($lines: 1) {
+	@include leader($lines, padding);
+}
+
+// Apply trailing whitespace as padding
+@mixin padding-trailer($lines: 1) {
+	@include trailer($lines, padding);
+}
+
+// Apply leading and trailing whitespace together.
+// Defaults to equal margins above and below and no padding.
+@mixin rhythm-spacing($leader: 1, $trailer: $leader, $padding-leader: 0, $padding-trailer: $padding-leader) {
+	@include leader($leader);
+	@include trailer($trailer);
+	@include padding-leader($padding-leader);
+	@include padding-trailer($padding-trailer);
+}
+
+// Apply a border to one side of an element without throwing off
+// the vertical rhythm. The available space ($lines) must be
+// greater than the width of your border.
+@mixin side-rhythm-border($side, $lines: 1, $border: $rule-width $rule-style $rule-color) {
+	$width: nth($border, 1);
+	$style: nth($border, 2);
+	$color: nth($border, 3);
+	@include px-to-rem(border-#{$side}, $width $style $color);
+
+	$padding: ($base-line-height - $width) * $lines;
+	@include px-to-rem(padding-#{$side}, $padding);
+}
+
+// Apply a leading rhythm border
+@mixin leading-border($lines: 1, $border: $rule-width $rule-style $rule-color) {
+	@include side-rhythm-border(top, $lines, $border);
+}
+
+// Apply a trailing rhythm border
+@mixin trailing-border($lines: 1, $border: $rule-width $rule-style $rule-color) {
+	@include side-rhythm-border(bottom, $lines, $border);
+}
+
+// Apply borders equally to all sides with padding to maintain the vertical rhythm
+@mixin rhythm-borders($lines: 1, $border: $rule-width $rule-style $rule-color) {
+	$width: nth($border, 1);
+	$style: nth($border, 2);
+	$color: nth($border, 3);
+	@include px-to-rem(border, $width $style $color);
+
+	$padding: ($base-line-height - $width) * $lines;
+	@include px-to-rem(padding, $padding);
+}
+
+// Max Screen Width
+@mixin max-screen($res)
+{
+  @media screen and ( max-width: $res )
+  {
+	@content;
+  }
+}
+
+// Min Screen Width
+@mixin min-screen($res)
+{
+  @media screen and ( min-width: $res )
+  {
+	@content;
+  }
+}
+
+// Min Height Length
+@mixin min-height($res){
+	@media screen and ( min-height: $res ) {
+		@content;
+	}
+}
+
+// Max Height Length
+@mixin max-height($res){
+	@media screen and ( max-height: $res ) {
+		@content;
+	}
+}
+
+// Perspective 
+@mixin perspective($perspective){
+	-webkit-perspective: $perspective;
+	-moz-perspective: $perspective;
+	perspective: $perspective;
+}
+
+// Backface Visibility
+@mixin backface-visibility($val){
+	-webkit-backface-visibility: $val;
+	-moz-backface-visibility: $val;
+	-o-backface-visibility: $val;
+	backface-visibility: $val;
+}
+
+// Transform
+@mixin transform($val){
+	-webkit-transform: $val;
+	-o-transform: $val;
+	-moz-transform: $val;
+	transform: $val;
+}
+
+// Transform Style
+@mixin transform-style($val){
+	-webkit-transform-style: $val;
+	-moz-transform-style: $val;
+	-o-transform-style: $val;
+	transform-style: $val;
+}
+
+// Background Image Gradient
+@mixin background-image-linear($val1, $val2){
+    background-image: -webkit-linear-gradient($val1, $val2);
+    background-image: -o-linear-gradient($val1, $val2);
+    background-image: linear-gradient($val1, $val2);
+}
+
+// No User Select Text Highlighting
+@mixin user-select($val){
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}

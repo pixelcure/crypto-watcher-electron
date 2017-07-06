@@ -1,0 +1,18 @@
+  //////////////////////////////////
+ // STRUCTURE /////////////////////
+//////////////////////////////////
+
+
+
+.bounds {
+	position: relative;
+	display: table;
+	height: 100vh;
+	width: 100vw;
+
+	&__inner {
+		display: table;
+		width: 100%;
+	}
+
+} // end outer bounds

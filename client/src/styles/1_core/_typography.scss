@@ -1,0 +1,46 @@
+  ////////////////////////////////
+ // TYPOGRAPHY //////////////////
+////////////////////////////////
+
+
+
+// Import Typefaces
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+// Main Typefaces being used
+$nunito : 'Nunito Sans', sans-serif;
+
+// Italic Text
+em {
+	font-style: italic;
+}
+
+// Bolded Text
+strong {
+	font-weight: bold;
+}
+
+// Links
+a {
+	color: $white;
+	text-decoration: none;
+}
+
+// Base type
+h1, h2, h3, h4, h5 {
+  color: $white;
+  font-family: $nunito;
+  margin: 0;
+}
+
+// h1
+h1 {
+}
+
+p {
+  color: $white;
+  font-family: $nunito;
+  font-weight: 100;
+  font-size: 16px;
+  font-size: 1vmax;
+}

@@ -1,0 +1,36 @@
+  ///////////////////////////////////
+ // INDEX //////////////////////////
+///////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//      ======================================   ////////////////////////
+// 🌮🌮  THIS FILE IS FOR IMPORTING PARTIALS!   ////////////////////////
+// 🌮🌮 ====================================== ////////////////////////
+// PLEASE INCLUDE ANY DECLARATIONS IN APPROPRIATE MODULE/PARTIAL. ////
+// DO NOT WRITE ANY STYLES IN THIS FILE. @import ONLY! 🌮🌮🌮🌮//////
+////////////////////////////////////////////////////////////////////
+
+
+
+// Variables and Icons
+@import './1_core/vars';
+@import './1_core/icons';
+
+// // Utility Partials
+@import './0_utility/mixins';
+@import './0_utility/normalize';
+@import './0_utility/transitions';
+@import './0_utility/customCheckboxes';
+@import './0_utility/customRadios';
+
+// Core Partials
+@import './1_core/typography';
+@import './1_core/global';
+@import './1_core/lists';
+@import './1_core/form-elements';
+@import './1_core/tables';
+
+// Structual Partials
+@import './2_structure/structure';

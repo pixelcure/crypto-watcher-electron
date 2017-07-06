@@ -1,0 +1,67 @@
+  //////////////////////////////////////
+ // CUSTOM RADIOS /////////////////////
+//////////////////////////////////////
+
+
+
+// Base for label styling
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  position: relative;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+// radio aspect
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:checked + label:before {
+  background: transparent;
+  border: 1px solid #000;
+  box-shadow: none;
+  content: '';
+  height: 30px;
+  left: -30px;
+  position: absolute;
+  top: -8px;
+  width: 30px;
+}
+// checked mark aspect
+[type="radio"]:not(:checked) + label:after,
+[type="radio"]:checked + label:after {
+    content: '☓';
+    // content: '✔';
+    color: #000;
+    font-size: 42.1px;
+    left: -31px;
+    line-height: 0.8;
+    position: absolute;
+    top: -9px;
+    transition: all .2s;
+}
+// checked mark aspect changes
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(.5);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+// disabled radio
+[type="radio"]:disabled:not(:checked) + label:before,
+[type="radio"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #FFF;
+  background-color: transparent;
+}
+[type="radio"]:disabled:checked + label:after {
+  color: #000;
+}
+[type="radio"]:disabled + label {
+  color: #000;
+}

@@ -1,0 +1,33 @@
+  //////////////////////////////////////
+ // GLOBAL SCREEN /////////////////////
+//////////////////////////////////////
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+  background: $navy;
+  color: $white;
+  font-family: $nunito;
+  font-size: 100%;
+  font-size: 16px;
+  height: 100vh;
+  height: 100%;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
