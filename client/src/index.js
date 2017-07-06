@@ -36,7 +36,7 @@ import store from './store';
 
 
 // History
-const history = createHistory();
+const history = createHistory()
 
 
 
@@ -54,15 +54,15 @@ const Root = () => {
 			</Router>
 		</Provider>
 	);
-};
+}
 
 
 
 // Render DOM
-ReactDOM.render(<Root />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'))
 
 
 
 // Register Service Worker, allows for assets
 // to load faster from local cache
-registerServiceWorker();
+registerServiceWorker()

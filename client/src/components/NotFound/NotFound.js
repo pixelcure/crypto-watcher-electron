@@ -5,9 +5,6 @@
 // Deps
 import React, { Component } from 'react';
 
-// CSS
-import './NotFound.css';
-
 // Link
 import { Link } from 'react-router-dom';
 
