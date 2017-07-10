@@ -24,8 +24,8 @@ import {
 import createHistory from 'history/createBrowserHistory'
 
 // Components
-import Cost from './components/Cost/Cost';
-import NotFound from './components/NotFound/NotFound';
+import CryptoPriceBoard from './components/CryptoPriceBoard';
+import NotFound from './components/NotFound';
 
 // Provider
 import { Provider } from 'react-redux';
@@ -47,7 +47,7 @@ const Root = () => {
 			<Router history={history}>
 				<Switch>
 					<Route exact path="/">
-						<Cost />
+						<CryptoPriceBoard />
 					</Route>
 					<Route component={NotFound} />
 				</Switch>
