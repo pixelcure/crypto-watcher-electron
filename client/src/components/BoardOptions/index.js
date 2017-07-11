@@ -8,6 +8,9 @@ import React, { Component } from 'react';
 // CSS
 import './BoardOptions.css';
 
+// Components
+import AppInfo from '../AppInfo/';
+
 // Settings Container
 import Settings from '../../containers/Settings';
 
@@ -17,9 +20,11 @@ import Settings from '../../containers/Settings';
 class BoardOptions extends Component {
 	render() {
 		return(
-			<div>
+			<section className="board-options">
+				<h1>Price Board Options</h1>
 				<Settings />
-	 	 	</div>
+				<AppInfo />
+	 	 	</section>
 
 		);
 	}
