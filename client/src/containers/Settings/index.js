@@ -9,7 +9,15 @@ import { connect } from 'react-redux';
 
 
 // mapDispatchToProps
-const mapDispatchToProps = (dispatch) => {}
+const mapDispatchToProps = (dispatch) => {
+	return {
+		fetchSettings : () => {
+			return () => {
+				dispatch({type : 'FETCH_SETTINGS'})
+			}
+		}
+	}
+}
 
 // mapStateToProps
 const mapStateToProps = (state) => ({
@@ -20,6 +28,7 @@ const mapStateToProps = (state) => ({
 class Settings extends Component {
 
 	componentDidMount() {
+		this.props.fetchSettings()();
 	}
 
 	fetching() {
@@ -33,7 +42,7 @@ class Settings extends Component {
 	render() {
 		return(
 			<section className="settings">
-				Settings
+				Settings 
 	 	 	</section>
 		);
 	}

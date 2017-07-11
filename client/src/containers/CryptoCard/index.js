@@ -50,7 +50,8 @@ const mapStateToProps = (state) => ({
 	symbol : state.cryptoCard.symbol,
 	marketCap : state.cryptoCard.marketCap,
 	conversion : state.cryptoCard.conversion,
-	error : state.cryptoCard.error
+	error : state.cryptoCard.error,
+	settings : state.settings.settings
 })
 
 // <CryptoCard /> Container
