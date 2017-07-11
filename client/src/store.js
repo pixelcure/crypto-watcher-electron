@@ -19,8 +19,8 @@ import reducers from "./reducers";
 const middleware = applyMiddleware(thunk, promise(), createLogger())
 
 // Default State
-const defaultState = {	
-	price : {}
+const defaultState = {
+	cryptoCard : {}
 }
 
 

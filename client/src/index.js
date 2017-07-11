@@ -25,6 +25,7 @@ import createHistory from 'history/createBrowserHistory'
 
 // Components
 import CryptoPriceBoard from './components/CryptoPriceBoard';
+import BoardOptions from './components/BoardOptions';
 import NotFound from './components/NotFound';
 
 // Provider
@@ -46,9 +47,8 @@ const Root = () => {
 		<Provider store={store}>
 			<Router history={history}>
 				<Switch>
-					<Route exact path="/">
-						<CryptoPriceBoard />
-					</Route>
+					<Route exact path="/" component={CryptoPriceBoard} />
+					<Route path="/settings" component={BoardOptions} />
 					<Route component={NotFound} />
 				</Switch>
 			</Router>
