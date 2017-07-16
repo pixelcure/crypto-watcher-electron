@@ -22,7 +22,6 @@ class BoardOptions extends Component {
 		return(
 			<section className="board-options">
 				<h1>Price Board Options</h1>
-				<Settings />
 				<AppInfo />
 	 	 	</section>
 

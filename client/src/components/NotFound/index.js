@@ -14,10 +14,10 @@ import { Link } from 'react-router-dom';
 class NotFound extends Component {
 	render() {
 		return (
-			<div>
-				<h1>The page your are looking for cannot be found.</h1>
-				<p>Please go <Link to="/" title="Home">home</Link> and try again.</p>
-			</div>
+			<section>
+				<h1>404 Error</h1>
+				<Link to="/" title="Home">Home</Link>
+			</section>
 		);
 	};
 };

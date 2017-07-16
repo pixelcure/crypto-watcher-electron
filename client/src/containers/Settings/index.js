@@ -25,29 +25,22 @@ const mapStateToProps = (state) => ({
 })
 
 // <Settings /> Container
-class Settings extends Component {
+// class Settings extends Component {
 
-	componentDidMount() {
-		this.props.fetchSettings()();
-	}
+// 	render() {
+// 		return(
+// 			<section className="settings">
+// 				<wrappedComponent {...this.props} />
+// 	 	 	</section>
+// 		);
+// 	}
+// }
 
-	fetching() {
-		return (
-			<div className="settings__loading">
-				LOADING...
-			</div>
-		);
-	}
-
-	render() {
-		return(
-			<section className="settings">
-				Settings 
-	 	 	</section>
-		);
-	}
+const Settings = WrappedComponent => class extends Component {
+    render() {
+      return <WrappedComponent {...this.props}/>
+    }
 }
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);

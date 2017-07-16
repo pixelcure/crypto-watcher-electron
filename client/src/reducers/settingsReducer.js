@@ -28,10 +28,78 @@ export default function (state={}, action){
 
 			return {
 				...state,
-				detailOptions : [{
-					detailName : 'some detail',
-					detailVisible : false
-				}]
+				detailOptions : [
+					{
+						detailKey : 'MARKET',
+						detailTitle : 'Market',
+						detailVisible : false
+					},
+					{
+						detailKey : 'LASTUPDATE',
+						detailTitle : 'Last Update',
+						detailVisible : false
+					},
+					{
+						detailKey : 'LASTVOLUME',
+						detailTitle : 'Last Volume',
+						detailVisible : false
+					},
+					{
+						detailKey : 'LASTVOLUMETO',
+						detailTitle : 'Last Volume Price %',
+						detailVisible : false
+					},
+					{
+						detailKey : 'LASTTRADEID',
+						detailTitle : 'Last Trade ID',
+						detailVisible : false
+					},
+					{
+						detailKey : 'VOLUME24HOUR',
+						detailTitle : '24hr Volume Price',
+						detailVisible : false
+					},
+					{
+						detailKey : 'VOLUME24HOURTO',
+						detailTitle : '24HR Volume %',
+						detailVisible : false
+					},
+					{
+						detailKey : 'OPEN24HOUR',
+						detailTitle : 'Open 24hr Price',
+						detailVisible : false
+					},
+					{
+						detailKey : 'HIGH24HOUR',
+						detailTitle : 'High 24hr Price',
+						detailVisible : false
+					},
+					{
+						detailKey : 'LOW24HOUR',
+						detailTitle : 'Low 24hr Price',
+						detailVisible : false
+					},
+					{
+						detailKey : 'CHANGE24HOUR',
+						detailTitle : 'Change in 24hr Price',
+						detailVisible : false
+					},
+					{
+						detailKey : 'CHANGEPCT24HOUR',
+						detail : 'Change in 24hr %',
+						detailVisible : false
+					},
+					{
+						detailKey : 'SUPPLY',
+						detailTitle : 'Coin Supply',
+						detailVisible : false
+					},
+					{
+						detailName : 'MKTCAP',
+						detail : 'Market Cap',
+						detailVisible : false
+					}
+				]
 			};
 
 		}
