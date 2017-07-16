@@ -17,6 +17,7 @@ import './styles/index.css';
 import {
 	Switch,
 	Route,
+	Link,
 	Router
 } from 'react-router-dom';
 
@@ -46,11 +47,18 @@ const Root = () => {
 	return(
 		<Provider store={store}>
 			<Router history={history}>
-				<Switch>
-					<Route exact path="/" component={CryptoPriceBoard} />
-					<Route path="/settings" component={BoardOptions} />
-					<Route component={NotFound} />
-				</Switch>
+				<main>
+					<header>
+						<Link title="Board Options" to="/settings">
+							<span className="icon icon-settings"></span>
+						</Link>
+					</header>
+					<Switch>
+						<Route exact path="/" component={CryptoPriceBoard} />
+						<Route path="/settings" component={BoardOptions} />
+						<Route component={NotFound} />
+					</Switch>
+				</main>
 			</Router>
 		</Provider>
 	);
