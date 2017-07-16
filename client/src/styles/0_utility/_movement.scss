@@ -1,0 +1,28 @@
+  ///////////////////////////////////////
+ // TRANSITIONS&ANIMATIONS /////////////
+///////////////////////////////////////
+
+
+@keyframes rotate {
+	0% {
+		transform: rotate(-360deg);
+	}
+}
+
+.board-enter {
+  opacity: 0.01;
+}
+
+.board-enter.board-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.board-leave {
+  opacity: 1;
+}
+
+.board-leave.board-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

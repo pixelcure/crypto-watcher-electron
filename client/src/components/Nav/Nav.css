@@ -1,0 +1,15 @@
+nav {
+  left: 1%;
+  position: absolute;
+  top: 0; }
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    nav ul li {
+      margin-right: 15px; }
+      nav ul li:last-child {
+        padding-right: 0; }
+      nav ul li a {
+        color: #ECF0F1; }
