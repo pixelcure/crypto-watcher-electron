@@ -7,7 +7,7 @@
 @font-face {
   font-family: 'icomoon';
   src:
-      url('./fonts/icomoon/icomoon.eot') format('embedded-opentype'),
+      // url('./fonts/icomoon/icomoon.eot') format('embedded-opentype'),
       url('./fonts/icomoon/icomoon.ttf') format('truetype'),
       url('./fonts/icomoon/icomoon.woff') format('woff'),
       url('./fonts/icomoon/icomoon.svg') format('svg');
@@ -28,4 +28,17 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-coin-dollar:before {
+  content: "\e93b";
+}
+.icon-coin-euro:before {
+  content: "\e93c";
+}
+.icon-spinner2:before {
+  content: "\e97b";
+}
+.icon-settings:before {
+  content: "\e994";
 }
