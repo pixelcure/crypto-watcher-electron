@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
 @font-face {
   font-family: 'icomoon';
-  src: url("./fonts/icomoon/icomoon.ttf") format("truetype"), url("./fonts/icomoon/icomoon.woff") format("woff"), url("./fonts/icomoon/icomoon.svg") format("svg");
+  src: url("./fonts/icomoon/icomoon.eot") format("embedded-opentype"), url("./fonts/icomoon/icomoon.ttf") format("truetype"), url("./fonts/icomoon/icomoon.woff") format("woff"), url("./fonts/icomoon/icomoon.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -25,11 +25,14 @@
 .icon-coin-euro:before {
   content: "\e93c"; }
 
-.icon-spinner2:before {
+.icon-loading:before {
   content: "\e97b"; }
 
 .icon-settings:before {
   content: "\e994"; }
+
+.icon-stats:before {
+  content: "\e99b"; }
 
 /*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document

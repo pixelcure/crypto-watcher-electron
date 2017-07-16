@@ -48,11 +48,20 @@ const Root = () => {
 		<Provider store={store}>
 			<Router history={history}>
 				<main>
-					<header>
-						<Link title="Board Options" to="/settings">
-							<span className="icon icon-settings"></span>
-						</Link>
-					</header>
+					<nav>
+						<ul className="list">
+							<li className="list__clean">
+								<Link title="Price Board" to="/">
+									<span className="icon icon-stats"></span>
+								</Link>
+							</li>
+							<li className="list__clean">
+								<Link title="Board Options" to="/settings">
+									<span className="icon icon-settings"></span>
+								</Link>
+							</li>
+						</ul>
+					</nav>
 					<Switch>
 						<Route exact path="/" component={CryptoPriceBoard} />
 						<Route path="/settings" component={BoardOptions} />
