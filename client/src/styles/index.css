@@ -19,10 +19,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-coin-dollar:before {
+.icon-coin-usd:before {
   content: "\e93b"; }
 
-.icon-coin-euro:before {
+.icon-coin-eur:before {
   content: "\e93c"; }
 
 .icon-loading:before {
@@ -405,6 +405,20 @@ template {
 [hidden] {
   display: none; }
 
+.board-enter {
+  opacity: 0.01; }
+
+.board-enter.board-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
+.board-leave {
+  opacity: 1; }
+
+.board-leave.board-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in; }
+
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
@@ -520,16 +534,16 @@ strong {
   font-weight: bold; }
 
 a {
-  color: #ECF0F1;
+  color: #141D40;
   text-decoration: none; }
 
 h1, h2, h3, h4, h5 {
-  color: #ECF0F1;
+  color: #141D40;
   font-family: "Nunito Sans", sans-serif;
   margin: 0; }
 
 p {
-  color: #ECF0F1;
+  color: #141D40;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 100;
   font-size: 16px;
@@ -546,7 +560,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: auto;
   background: #141D40;
-  color: #ECF0F1;
+  color: #141D40;
   font-family: "Nunito Sans", sans-serif;
   font-size: 100%;
   font-size: 16px;
@@ -571,11 +585,10 @@ ul.list__clean {
     display: table-cell;
     width: 50%; }
 
-.bounds {
+.outer-bounds {
   position: relative;
-  display: table;
   height: 100vh;
-  width: 100vw; }
-  .bounds__inner {
+  padding: 3%; }
+  .outer-bounds__inner {
     display: table;
     width: 100%; }

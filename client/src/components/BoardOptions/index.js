@@ -14,7 +14,7 @@ import AppInfo from '../AppInfo/';
 // Settings Container
 import Settings from '../../containers/Settings';
 
-
+// const S = Settings()(AppInfo)
 
 // <BoardOptions /> Component
 class BoardOptions extends Component {

@@ -17,7 +17,6 @@ import './styles/index.css';
 import {
 	Switch,
 	Route,
-	Link,
 	Router
 } from 'react-router-dom';
 
@@ -25,6 +24,7 @@ import {
 import createHistory from 'history/createBrowserHistory'
 
 // Components
+import Nav from './components/Nav';
 import CryptoPriceBoard from './components/CryptoPriceBoard';
 import BoardOptions from './components/BoardOptions';
 import NotFound from './components/NotFound';
@@ -47,27 +47,14 @@ const Root = () => {
 	return(
 		<Provider store={store}>
 			<Router history={history}>
-				<main>
-					<nav>
-						<ul className="list">
-							<li className="list__clean">
-								<Link title="Price Board" to="/">
-									<span className="icon icon-stats"></span>
-								</Link>
-							</li>
-							<li className="list__clean">
-								<Link title="Board Options" to="/settings">
-									<span className="icon icon-settings"></span>
-								</Link>
-							</li>
-						</ul>
-					</nav>
+				<section className="outer-bounds">
+					<Nav />
 					<Switch>
 						<Route exact path="/" component={CryptoPriceBoard} />
 						<Route path="/settings" component={BoardOptions} />
 						<Route component={NotFound} />
 					</Switch>
-				</main>
+				</section>
 			</Router>
 		</Provider>
 	);

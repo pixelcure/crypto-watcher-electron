@@ -4,6 +4,7 @@
 
 // Deps
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 
 
@@ -48,7 +49,7 @@ const mapStateToProps = (state) => ({
 	fetching : state.cryptoCard.fetching,
 	currency : state.cryptoCard.currency,
 	symbol : state.cryptoCard.symbol,
-	marketCap : state.cryptoCard.marketCap,
+	lastUpdate : state.cryptoCard.lastUpdate,
 	conversion : state.cryptoCard.conversion,
 	error : state.cryptoCard.error,
 	settings : state.settings.settings
@@ -59,7 +60,7 @@ class CryptoCard extends Component {
 
 	componentDidMount() {
 		// Fetch Cost
-		(this.props.fetchCost('LTC', 'USD')())
+		(this.props.fetchCost('BTC', 'EUR')())
 		// Start Interval
 		this.fetchInterval(10000)
 	}
@@ -70,27 +71,34 @@ class CryptoCard extends Component {
 
 	renderCurrencyTitle() {
 		return (
-			<header className="crypto-card__title title">
-				<h1 className="title__currency">{ this.props.currency }</h1>
-				<h2 className="title__symbol">{ this.props.symbol }</h2>
-			</header>
+			<div className="currency">
+				<div className="cell symbol-outer">
+					<h2 className="symbol">{ this.props.symbol }</h2>
+				</div>
+				<h1 className="cell crypto">{ this.props.currency }</h1>
+			</div>
 		);
 	}
 
 	renderPrice() {
 		return (
-			<strong className="crypto-card__price">
-				{ this.props.price }
-			</strong>
+			<div className="conversion">
+				<div className="currency">
+					<span className={`icon icon-coin-${this.props.conversion.toLowerCase()}`}></span>
+					<span className="price-text">{ this.props.price.replace(/[$€]/ig, '') }</span>
+					<span className="last-update"><b>Last Update &mdash; </b> { this.props.lastUpdate }</span>
+				</div>
+				{ this.renderExtraDetails() }
+			</div>
 		);
 	}
 
 	renderExtraDetails() {
 		return (
-			<ul className="crypto-card__extra-details details">
-				<li className="details__item">
-					<span>Market Cap</span>
-					{ this.props.marketCap }
+			<ul className="details">
+				<li className="item">
+					<span>Last Update </span>
+					{ this.props.lastUpdate }
 				</li>
 			</ul>
 		);
@@ -98,15 +106,15 @@ class CryptoCard extends Component {
 
 	fetching() {
 		return (
-			<div className="crypto-card__loading">
-				LOADING...
+			<div className="loading">
+				<span className="icon icon-loading"></span>
 			</div>
 		);
 	}
 
 	renderError() {
 		return (
-			<strong className="crypto-card__error">
+			<strong className="error">
 				{ this.props.error }
 			</strong>
 		);
@@ -117,7 +125,6 @@ class CryptoCard extends Component {
 			<section className="crypto-card">
 				{ this.props.fetched ? this.renderCurrencyTitle() : null}
 				{ this.props.fetched ? this.renderPrice() : null }
-				{ this.props.fetched ? this.renderExtraDetails() : null }
 				{ this.props.fetching ? this.fetching() : null }
 				{ this.props.error !== undefined ? this.renderError() : null }
 	 	 	</section>

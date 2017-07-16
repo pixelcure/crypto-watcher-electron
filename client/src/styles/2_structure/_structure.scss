@@ -4,11 +4,10 @@
 
 
 
-.bounds {
+.outer-bounds {
 	position: relative;
-	display: table;
 	height: 100vh;
-	width: 100vw;
+	padding: 3%;
 
 	&__inner {
 		display: table;
