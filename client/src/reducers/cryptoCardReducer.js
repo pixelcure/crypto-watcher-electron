@@ -12,16 +12,17 @@ const FETCH_COST_FULFILLED = 'FETCH_COST_FULFILLED'
 
 
 // cryptoCard reducer
-export default function (state={ fetched : false }, action){
+export default function (state={ 
+	fetched : false
+}, action){
 
 	switch (action.type) {
 		case FETCH_COST : {
-
 			return {
 				...state, 
 				fetching : true,
 				fetched : false,
-				currency : action.currency,
+				currencies : [].concat(action.currency, state.currencies !== undefined ? state.currencies : []),
 				conversion : action.conversion
 			};
 
@@ -36,13 +37,14 @@ export default function (state={ fetched : false }, action){
 
 		}
 		case FETCH_COST_FULFILLED : {
-			
-			// Price Data
-			const data = action.payload[state.currency][state.conversion]
 
-			// Return State
-			return {
-				...state,
+			// Price Data
+			const currency = Object.keys(action.payload.DISPLAY)[0]
+			const data = action.payload.DISPLAY[currency][state.conversion]
+
+			// Card
+			const card = {
+				name : currency,
 				price : data.PRICE,
 				symbol : data.FROMSYMBOL,
 				conversionSymbol : data.TOSYMBOL,
@@ -60,6 +62,12 @@ export default function (state={ fetched : false }, action){
 				changePct24Hour : data.CHANGEPCT24HOUR,
 				supply : data.SUPPLY,
 				marketCap : data.MKTCAP,
+			}
+
+			// Return State
+			return {
+				...state,
+				cards : [].concat(card, state.cards !== undefined ? state.cards : []),
 				fetching : false, 
 				fetched : true 
 			};

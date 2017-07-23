@@ -51,7 +51,7 @@ const Root = () => {
 					<Nav />
 					<Switch>
 						<Route exact path="/" component={CryptoPriceBoard} />
-						<Route path="/settings" component={BoardOptions} />
+						<Route path="/options" component={BoardOptions} />
 						<Route component={NotFound} />
 					</Switch>
 				</section>

@@ -20,7 +20,7 @@ export default function (state={}, action){
 
 			return {
 				...state,
-				cryptoCurrency : ['LTC', 'BTC', 'ETH']
+				currencies : ['LTC', 'BTC', 'ETH']
 			};
 
 		}
@@ -108,8 +108,8 @@ export default function (state={}, action){
 			return {
 				...state,
 				settings : {
-					cryptoCurrency : ['LTC', 'ETH'],
-					conversions : ['USD'],
+					currencies : ['LTC', 'ETH', 'BTC'],
+					conversion : 'USD',
 					detailOptions : []
 				}
 			}

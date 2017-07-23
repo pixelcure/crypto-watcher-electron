@@ -5,19 +5,27 @@
 
 
 // Action to pull crypto cost based off currency 
-// and convertedCurrency params
-export function fetchCost (currency, convertedCurrency){
+// and conversion params
+export function fetchCost (currency, conversion){
 	return (dispatch) => {
+		// Fetch Settings
+		dispatch({
+			type : 'FETCH_SETTINGS'
+		});
 		// Dispatch FETCH_COST action
-		dispatch({type : 'FETCH_COST'});
+		dispatch({
+			type : 'FETCH_COST',
+			currency,
+			conversion
+		});
 		// Fetch Cost
-		fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${currency}&tsyms=${convertedCurrency}`)
+		fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${currency}&tsyms=${conversion}`)
+		.then((res) => res.json())
 		.then((res) => {
 			// Dispatch FETCH_COST_FULFILLED
-			console.log(res);
 			dispatch({
 				type : 'FETCH_COST_FULFILLED',
-				payload : res.data
+				payload : res
 			})
 		})
 		.catch((err) => {

@@ -22,7 +22,7 @@ const Nav = () => {
 					</Link>
 				</li>
 				<li className="list__clean">
-					<Link title="Board Options" to="/settings">
+					<Link title="Board Options" to="/options">
 						<span className="icon icon-settings"></span>
 					</Link>
 				</li>

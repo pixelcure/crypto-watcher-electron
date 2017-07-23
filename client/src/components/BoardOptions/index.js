@@ -10,11 +10,14 @@ import './BoardOptions.css';
 
 // Components
 import AppInfo from '../AppInfo/';
+import Settings from '../Settings';
 
-// Settings Container
-import Settings from '../../containers/Settings';
+// Settings HOC
+import SettingsHOC from '../../hocs/Settings';
 
-// const S = Settings()(AppInfo)
+
+// Create ehanched Settings Component
+const EnhancedSettings = SettingsHOC(Settings);
 
 // <BoardOptions /> Component
 class BoardOptions extends Component {
@@ -22,6 +25,7 @@ class BoardOptions extends Component {
 		return(
 			<section className="board-options">
 				<h1>Price Board Options</h1>
+				<EnhancedSettings />
 				<AppInfo />
 	 	 	</section>
 

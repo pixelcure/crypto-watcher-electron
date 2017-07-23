@@ -5,9 +5,6 @@
 // Dependencies
 import React from 'react';
 
-// CSS
-import './AppInfo.css';
-
 
 
 // <AppInfo /> Element

@@ -6,18 +6,20 @@
 
 
 
-.crypto-card {
+.price-card {
+	animation: .5s fadeIn forwards;
 	background: $white;
 	background: -webkit-linear-gradient(top, rgba(240,249,255,1) 0%,rgba(239,239,239,1) 100%);
 	border-radius: 5px;
 	box-shadow: 5px 5px 15px rgba(255, 255, 255, .15);
 	overflow: hidden;
 	margin-bottom: 25px;
+	min-height: 100px;
 	padding: 1.5% 3%;	
 	&:last-child { margin-bottom: 0; }
 } // End Crypto Card Parent
 
-.crypto-card .loading {
+.price-card .loading {
 	margin: 25px auto;
 	text-align: center;
 	.icon-loading {
@@ -26,7 +28,7 @@
 	}
 }
 
-.crypto-card .currency {
+.price-card .currency {
 	color: $navy;
 	float: left;
 	width: 50%;
@@ -56,7 +58,7 @@
 } // End Currency Child
 
 
-.crypto-card .conversion {
+.price-card .conversion {
 	float: right;
 	text-align: right;
 	width: 50%;
@@ -68,7 +70,7 @@
 		.icon {
 			color: $grey;
 			position: relative;
-			top: 3px;
+			top: 2px;
 		}
 	}
 	.last-update {
