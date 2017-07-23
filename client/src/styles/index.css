@@ -19,13 +19,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-coin-usd:before {
+.icon-pulse:before {
+  content: "\f085"; }
+
+.icon-refresh:before {
+  content: "\f087"; }
+
+.icon-coin-dollar:before {
   content: "\e93b"; }
 
-.icon-coin-eur:before {
+.icon-coin-euro:before {
   content: "\e93c"; }
 
-.icon-loading:before {
+.icon-spinner2:before {
   content: "\e97b"; }
 
 .icon-settings:before {
@@ -405,6 +411,16 @@ template {
 [hidden] {
   display: none; }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .board-enter {
   opacity: 0.01; }
 
@@ -587,7 +603,6 @@ ul.list__clean {
 
 .outer-bounds {
   position: relative;
-  height: 100vh;
   padding: 3%; }
   .outer-bounds__inner {
     display: table;

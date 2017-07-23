@@ -26,6 +26,11 @@ const Nav = () => {
 						<span className="icon icon-settings"></span>
 					</Link>
 				</li>
+				<li className="list__clean">
+					<div title="Refresh Board">
+						<span className="icon icon-refresh"></span>
+					</div>
+				</li>
 			</ul>
 		</nav>
 	);

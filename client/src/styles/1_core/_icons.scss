@@ -30,13 +30,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-coin-usd:before {
+.icon-pulse:before {
+  content: "\f085";
+}
+.icon-refresh:before {
+  content: "\f087";
+}
+.icon-coin-dollar:before {
   content: "\e93b";
 }
-.icon-coin-eur:before {
+.icon-coin-euro:before {
   content: "\e93c";
 }
-.icon-loading:before {
+.icon-spinner2:before {
   content: "\e97b";
 }
 .icon-settings:before {
