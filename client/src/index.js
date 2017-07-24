@@ -24,7 +24,7 @@ import {
 import createHistory from 'history/createBrowserHistory'
 
 // Components
-import Nav from './components/Nav';
+import Header from './components/Header';
 import CryptoPriceBoard from './components/CryptoPriceBoard';
 import BoardOptions from './components/BoardOptions';
 import NotFound from './components/NotFound';
@@ -48,10 +48,7 @@ const Root = () => {
 		<Provider store={store}>
 			<Router history={history}>
 				<section className="outer-bounds">
-					<header>
-						<h1>thecryptocurrency.observer</h1>
-						<Nav />
-					</header>
+					<Header />
 					<Switch>
 						<Route exact path="/" component={CryptoPriceBoard} />
 						<Route path="/options" component={BoardOptions} />

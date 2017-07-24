@@ -18,20 +18,11 @@
 	}
 }
 
-.board-enter {
-  opacity: 0.01;
-}
-
-.board-enter.board-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.board-leave {
-  opacity: 1;
-}
-
-.board-leave.board-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+@keyframes headerFadeOut {
+	0% {
+		background: $white;
+	}
+	100% {
+		background: rgba(190, 238, 251, 0.3);
+	}
 }

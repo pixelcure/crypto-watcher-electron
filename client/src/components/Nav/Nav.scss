@@ -3,13 +3,10 @@
 //////////////////////////////////////////////
 @import '../../styles/1_core/_vars';
 
-nav {
-    color: $navy;
-    background: $white;
-    position: absolute;
-    right: 0;
-    top: 15px;
 
+
+nav {
+	float: right;
 	ul {
 		display: flex;
 		list-style: none;
@@ -29,4 +26,4 @@ nav {
 			}
 		}
 	}
-}
+} // End Nav

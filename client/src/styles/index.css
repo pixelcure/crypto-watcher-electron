@@ -421,19 +421,11 @@ template {
   100% {
     opacity: 1; } }
 
-.board-enter {
-  opacity: 0.01; }
-
-.board-enter.board-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in; }
-
-.board-leave {
-  opacity: 1; }
-
-.board-leave.board-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in; }
+@keyframes headerFadeOut {
+  0% {
+    background: #ECF0F1; }
+  100% {
+    background: rgba(190, 238, 251, 0.3); } }
 
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
@@ -606,7 +598,7 @@ ul.list__clean {
 
 .outer-bounds {
   position: relative;
-  padding: 3%; }
+  padding: 0 3% 3%; }
   .outer-bounds__inner {
     display: table;
     width: 100%; }

@@ -1,9 +1,5 @@
 nav {
-  color: #141D40;
-  background: #ECF0F1;
-  position: absolute;
-  right: 0;
-  top: 15px; }
+  float: right; }
   nav ul {
     display: flex;
     list-style: none;
