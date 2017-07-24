@@ -35,6 +35,8 @@
   width: 25px; }
   .price-board .refresh-board:hover {
     transform: rotate(360deg); }
+  .price-board .refresh-board:target {
+    transform: rotate(-360deg); }
 
 .price-board .loading {
   margin: 25px auto;
@@ -49,6 +51,7 @@
   padding: 0; }
   .pricecard-details .card-detail {
     animation: .5s fadeIn forwards;
+    animation-delay: .3s;
     background: #ECF0F1;
     background: -webkit-linear-gradient(top, #f0f9ff 0%, #efefef 100%);
     border-radius: 5px;
@@ -56,9 +59,12 @@
     overflow: hidden;
     margin-bottom: 25px;
     min-height: 100px;
+    opacity: 0;
     padding: 1.5% 3%; }
     .pricecard-details .card-detail:last-child {
       margin-bottom: 0; }
+    .pricecard-details .card-detail:first-child {
+      animation-delay: none; }
 
 .card-detail .currency {
   color: #141D40;

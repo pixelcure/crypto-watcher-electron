@@ -8,10 +8,6 @@
 // and conversion params
 export function fetchCost (currencies, conversion){
 	return (dispatch) => {
-		// Fetch Settings
-		dispatch({
-			type : 'FETCH_SETTINGS'
-		});
 		// Dispatch FETCH_COST action
 		dispatch({
 			type : 'FETCH_COST',
