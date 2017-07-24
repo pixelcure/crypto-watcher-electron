@@ -22,43 +22,61 @@
   opacity: 0.01;
   transition: opacity 300ms ease-in; }
 
-.price-card {
-  animation: .5s fadeIn forwards;
-  background: #ECF0F1;
-  background: -webkit-linear-gradient(top, #f0f9ff 0%, #efefef 100%);
-  border-radius: 5px;
-  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.15);
-  overflow: hidden;
-  margin-bottom: 25px;
-  min-height: 100px;
-  padding: 1.5% 3%; }
-  .price-card:last-child {
-    margin-bottom: 0; }
+.price-board .refresh-board {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #ECF0F1;
+  font-size: 1.5em;
+  height: 25px;
+  outline: none;
+  padding: 0;
+  transition: .3s ease-in;
+  width: 25px; }
+  .price-board .refresh-board:hover {
+    transform: rotate(360deg); }
 
-.price-card .loading {
+.price-board .loading {
   margin: 25px auto;
   text-align: center; }
-  .price-card .loading .icon-loading {
+  .price-board .loading .icon-loading {
     animation: 1s rotate infinite forwards;
+    color: #ECF0F1;
     display: block; }
 
-.price-card .currency {
+.pricecard-details {
+  margin: 0;
+  padding: 0; }
+  .pricecard-details .card-detail {
+    animation: .5s fadeIn forwards;
+    background: #ECF0F1;
+    background: -webkit-linear-gradient(top, #f0f9ff 0%, #efefef 100%);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    margin-bottom: 25px;
+    min-height: 100px;
+    padding: 1.5% 3%; }
+    .pricecard-details .card-detail:last-child {
+      margin-bottom: 0; }
+
+.card-detail .currency {
   color: #141D40;
   float: left;
   width: 50%; }
-  .price-card .currency .cell {
+  .card-detail .currency .cell {
     float: left; }
-  .price-card .currency .crypto {
+  .card-detail .currency .crypto {
     color: #008080;
     display: block;
     height: 65px;
     margin: 2px 15px 0 0;
     padding-top: 20px; }
-  .price-card .currency .symbol-outer {
+  .card-detail .currency .symbol-outer {
     border-right: 1px solid #bfbfbf;
     margin: 1px 15px 0 0;
     padding-right: 15px; }
-    .price-card .currency .symbol-outer .symbol {
+    .card-detail .currency .symbol-outer .symbol {
       border: 5px solid #141D40;
       border-radius: 360px;
       font-size: 50px;
@@ -68,25 +86,25 @@
       text-align: center;
       width: 65px; }
 
-.price-card .conversion {
+.card-detail .conversion {
   float: right;
   text-align: right;
   width: 50%; }
-  .price-card .conversion .currency {
+  .card-detail .conversion .currency {
     color: #141D40;
     font-size: 36px;
     font-weight: 800;
     width: 100%; }
-    .price-card .conversion .currency .icon {
+    .card-detail .conversion .currency .icon {
       color: #666;
       position: relative;
       top: 2px; }
-  .price-card .conversion .last-update {
+  .card-detail .conversion .last-update {
     display: block;
     font-size: 14px;
     margin-top: 10px; }
-    .price-card .conversion .last-update b {
+    .card-detail .conversion .last-update b {
       color: #666;
       font-weight: 800; }
-  .price-card .conversion .details {
+  .card-detail .conversion .details {
     display: none; }

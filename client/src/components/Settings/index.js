@@ -12,7 +12,15 @@ class Settings extends Component {
 	render() {
 		return(
 			<section className="settings">
-				<h1>Settings</h1>
+				<ul>
+					<li>
+						<fieldset>
+							<input type="radio" value="BTC" />
+						</fieldset>
+					</li>
+					<li></li>
+					<li></li>
+				</ul>
 			</section>
 		);
 	}

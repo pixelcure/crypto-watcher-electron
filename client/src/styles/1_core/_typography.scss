@@ -27,14 +27,14 @@ a {
 }
 
 // Base type
+body {
+  font-size: 16px;
+}
+
 h1, h2, h3, h4, h5 {
   color: $navy;
   font-family: $nunito;
   margin: 0;
-}
-
-// h1
-h1 {
 }
 
 p {
@@ -42,5 +42,5 @@ p {
   font-family: $nunito;
   font-weight: 100;
   font-size: 16px;
-  font-size: 1vmax;
+  font-size: 1em;
 }

@@ -20,7 +20,8 @@ const middleware = applyMiddleware(thunk, promise(), createLogger())
 
 // Default State
 const defaultState = {
-	cryptoCard : {}
+	priceCard : {},
+	settings : {}
 }
 
 

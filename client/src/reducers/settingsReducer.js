@@ -110,7 +110,8 @@ export default function (state={}, action){
 				settings : {
 					currencies : ['LTC', 'ETH', 'BTC'],
 					conversion : 'USD',
-					detailOptions : []
+					detailOptions : [],
+					tickDelay : 5000
 				}
 			}
 

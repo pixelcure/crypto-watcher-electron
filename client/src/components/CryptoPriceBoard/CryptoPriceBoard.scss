@@ -5,30 +5,51 @@
 @import '../../styles/0_utility/movement';
 
 
-
-.price-card {
-	animation: .5s fadeIn forwards;
-	background: $white;
-	background: -webkit-linear-gradient(top, rgba(240,249,255,1) 0%,rgba(239,239,239,1) 100%);
-	border-radius: 5px;
-	box-shadow: 5px 5px 15px rgba(255, 255, 255, .15);
-	overflow: hidden;
-	margin-bottom: 25px;
-	min-height: 100px;
-	padding: 1.5% 3%;	
-	&:last-child { margin-bottom: 0; }
-} // End Crypto Card Parent
-
-.price-card .loading {
-	margin: 25px auto;
-	text-align: center;
-	.icon-loading {
-		animation: 1s rotate infinite forwards;
-		display: block;
+.price-board {
+	.refresh-board {
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+		color: $white;
+		font-size: 1.5em;
+	    height: 25px;
+		outline: none;
+		padding: 0;
+		transition: .3s ease-in;
+	    width: 25px;
+		&:hover {
+			transform: rotate(360deg)
+		}
 	}
-}
+	.loading {
+		margin: 25px auto;
+		text-align: center;
+		.icon-loading {
+			animation: 1s rotate infinite forwards;
+			color: $white;
+			display: block;
+		}
+	}
+} // End Price Board
 
-.price-card .currency {
+.pricecard-details {
+	margin: 0;
+	padding: 0;
+	.card-detail {
+		animation: .5s fadeIn forwards;
+		background: $white;
+		background: -webkit-linear-gradient(top, rgba(240,249,255,1) 0%,rgba(239,239,239,1) 100%);
+		border-radius: 5px;
+		box-shadow: 5px 5px 15px rgba(255, 255, 255, .15);
+		overflow: hidden;
+		margin-bottom: 25px;
+		min-height: 100px;
+		padding: 1.5% 3%;	
+		&:last-child { margin-bottom: 0; }
+	} // End Crypto Card Parent
+} // End Price Card Details
+
+.card-detail .currency {
 	color: $navy;
 	float: left;
 	width: 50%;
@@ -57,8 +78,7 @@
 	}
 } // End Currency Child
 
-
-.price-card .conversion {
+.card-detail .conversion {
 	float: right;
 	text-align: right;
 	width: 50%;

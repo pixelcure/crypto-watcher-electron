@@ -48,7 +48,10 @@ const Root = () => {
 		<Provider store={store}>
 			<Router history={history}>
 				<section className="outer-bounds">
-					<Nav />
+					<header>
+						<h1>thecryptocurrency.observer</h1>
+						<Nav />
+					</header>
 					<Switch>
 						<Route exact path="/" component={CryptoPriceBoard} />
 						<Route path="/options" component={BoardOptions} />
