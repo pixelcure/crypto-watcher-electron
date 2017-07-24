@@ -24,8 +24,10 @@ import {
 import createHistory from 'history/createBrowserHistory'
 
 // Components
-import Cost from './components/Cost/Cost';
-import NotFound from './components/NotFound/NotFound';
+import Header from './components/Header';
+import CryptoPriceBoard from './components/CryptoPriceBoard';
+import BoardOptions from './components/BoardOptions';
+import NotFound from './components/NotFound';
 
 // Provider
 import { Provider } from 'react-redux';
@@ -36,7 +38,7 @@ import store from './store';
 
 
 // History
-const history = createHistory();
+const history = createHistory()
 
 
 
@@ -45,24 +47,26 @@ const Root = () => {
 	return(
 		<Provider store={store}>
 			<Router history={history}>
-				<Switch>
-					<Route exact path="/">
-						<Cost />
-					</Route>
-					<Route component={NotFound} />
-				</Switch>
+				<section className="outer-bounds">
+					<Header />
+					<Switch>
+						<Route exact path="/" component={CryptoPriceBoard} />
+						<Route path="/options" component={BoardOptions} />
+						<Route component={NotFound} />
+					</Switch>
+				</section>
 			</Router>
 		</Provider>
 	);
-};
+}
 
 
 
 // Render DOM
-ReactDOM.render(<Root />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'))
 
 
 
 // Register Service Worker, allows for assets
 // to load faster from local cache
-registerServiceWorker();
+registerServiceWorker()

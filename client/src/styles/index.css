@@ -19,6 +19,27 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-pulse:before {
+  content: "\f085"; }
+
+.icon-refresh:before {
+  content: "\f087"; }
+
+.icon-coin-usd:before {
+  content: "\e93b"; }
+
+.icon-coin-euro:before {
+  content: "\e93c"; }
+
+.icon-spinner2:before {
+  content: "\e97b"; }
+
+.icon-settings:before {
+  content: "\e994"; }
+
+.icon-stats:before {
+  content: "\e99b"; }
+
 /*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -390,6 +411,22 @@ template {
 [hidden] {
   display: none; }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes headerFadeOut {
+  0% {
+    background: #ECF0F1; }
+  100% {
+    background: rgba(190, 238, 251, 0.3); } }
+
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
@@ -505,20 +542,23 @@ strong {
   font-weight: bold; }
 
 a {
-  color: #ECF0F1;
+  color: #141D40;
   text-decoration: none; }
 
+body {
+  font-size: 16px; }
+
 h1, h2, h3, h4, h5 {
-  color: #ECF0F1;
+  color: #141D40;
   font-family: "Nunito Sans", sans-serif;
   margin: 0; }
 
 p {
-  color: #ECF0F1;
+  color: #141D40;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 100;
   font-size: 16px;
-  font-size: 1vmax; }
+  font-size: 1em; }
 
 * {
   box-sizing: border-box; }
@@ -531,7 +571,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: auto;
   background: #141D40;
-  color: #ECF0F1;
+  color: #141D40;
   font-family: "Nunito Sans", sans-serif;
   font-size: 100%;
   font-size: 16px;
@@ -556,11 +596,9 @@ ul.list__clean {
     display: table-cell;
     width: 50%; }
 
-.bounds {
+.outer-bounds {
   position: relative;
-  display: table;
-  height: 100vh;
-  width: 100vw; }
-  .bounds__inner {
+  padding: 0 3% 3%; }
+  .outer-bounds__inner {
     display: table;
     width: 100%; }

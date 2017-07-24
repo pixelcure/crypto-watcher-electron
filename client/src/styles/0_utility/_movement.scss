@@ -1,0 +1,28 @@
+  ///////////////////////////////////////
+ // TRANSITIONS&ANIMATIONS /////////////
+///////////////////////////////////////
+
+
+@keyframes rotate {
+	0% {
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes headerFadeOut {
+	0% {
+		background: $white;
+	}
+	100% {
+		background: rgba(190, 238, 251, 0.3);
+	}
+}
