@@ -11,18 +11,21 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 
 // Reducers
-import cryptoCurrency from "./reducers";
+import reducers from "./reducers";
 
 
 
 // Middleware
-const middleware = applyMiddleware(promise(), thunk, createLogger())
+const middleware = applyMiddleware(thunk, promise(), createLogger())
 
 // Default State
-const defaultState = {	
-	cryptoCurrency : null
+const defaultState = {
+	priceCard : {},
+	settings : {}
 }
 
 
 
-export default createStore(cryptoCurrency, defaultState, middleware);
+// Create Store, Reducers, Default State, Middleware
+// export default createStore(price, middleware);
+export default createStore(reducers, defaultState, middleware);

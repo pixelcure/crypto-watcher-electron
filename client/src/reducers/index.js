@@ -7,12 +7,14 @@ import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux';
 
 // Reducers
-import cryptoCurrency from './crytoCurrencyReducer';
+import priceCard from './priceCardReducer';
+import settings from './settingsReducer';
 
 
 
 // Combine Reducers
 export default combineReducers({
-	cryptoCurrency,
+	priceCard,
+	settings,
 	routerReducer
 });

@@ -29,3 +29,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-pulse:before {
+  content: "\f085";
+}
+.icon-refresh:before {
+  content: "\f087";
+}
+.icon-coin-usd:before {
+  content: "\e93b";
+}
+.icon-coin-euro:before {
+  content: "\e93c";
+}
+.icon-spinner2:before {
+  content: "\e97b";
+}
+.icon-settings:before {
+  content: "\e994";
+}
+.icon-stats:before {
+  content: "\e99b";
+}

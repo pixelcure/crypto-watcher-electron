@@ -4,7 +4,10 @@
 
 
 
-// Start here
+ul {
+	padding: 0;
+}
+
 ul.list {
 	&__clean {
 		list-style: none;

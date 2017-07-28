@@ -1,0 +1,30 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes headerFadeOut {
+  0% {
+    background: #ECF0F1; }
+  100% {
+    background: rgba(190, 238, 251, 0.3); } }
+
+header {
+  animation-timing-function: ease-in;
+  background: #ECF0F1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #141D40;
+  margin-bottom: 3%;
+  overflow: hidden; }
+  header .logo {
+    float: left;
+    font-size: 16px;
+    font-weight: 100;
+    margin: 3px 0 0 25px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
