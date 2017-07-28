@@ -13,8 +13,8 @@ function createWindow () {
   win = new BrowserWindow({
     transparent : true,
     draggable : true,
-    width: 300,
-    height: 400
+    width: 550,
+    height: 550
   })
 
   // and load the index.html of the app.
