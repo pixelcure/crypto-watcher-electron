@@ -14,22 +14,6 @@
   100% {
     background: rgba(190, 238, 251, 0.3); } }
 
-.price-board .refresh-board {
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  color: #ECF0F1;
-  font-size: 1.5em;
-  height: 25px;
-  outline: none;
-  padding: 0;
-  transition: .3s ease-in;
-  width: 25px; }
-  .price-board .refresh-board:hover {
-    transform: rotate(360deg); }
-  .price-board .refresh-board:target {
-    transform: rotate(-360deg); }
-
 .price-board .loading {
   margin: 25px auto;
   text-align: center; }
@@ -37,6 +21,35 @@
     animation: 1s rotate infinite forwards;
     color: #ECF0F1;
     display: block; }
+
+.dashboard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  margin: 0 0 1%;
+  overflow: hidden;
+  padding: 5px 10px;
+  user-select: none; }
+  .dashboard li {
+    float: left; }
+    .dashboard li.refresh-feed {
+      float: right; }
+  .dashboard fieldset {
+    margin: 7px 0 0 20px; }
+  .dashboard .refresh-board {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    color: #ECF0F1;
+    font-size: 35px;
+    height: 35px;
+    outline: none;
+    padding: 0;
+    transition: .3s ease-in;
+    width: 35px; }
+    .dashboard .refresh-board:hover {
+      transform: rotate(360deg); }
+    .dashboard .refresh-board:target {
+      transform: rotate(-360deg); }
 
 .pricecard-details {
   margin: 0;
@@ -62,6 +75,9 @@
   color: #141D40;
   float: left;
   width: 50%; }
+  @media screen and (max-width: 400px) {
+    .card-detail .currency {
+      width: 100%; } }
   .card-detail .currency .cell {
     float: left; }
   .card-detail .currency .crypto {
@@ -70,6 +86,11 @@
     height: 65px;
     margin: 2px 15px 0 0;
     padding-top: 20px; }
+    @media screen and (max-width: 400px) {
+      .card-detail .currency .crypto {
+        margin: 0;
+        text-align: center;
+        width: 100%; } }
   .card-detail .currency .symbol-outer {
     border-right: 1px solid #bfbfbf;
     margin: 1px 15px 0 0;
@@ -83,16 +104,33 @@
       padding-top: 17px;
       text-align: center;
       width: 65px; }
+    @media screen and (max-width: 400px) {
+      .card-detail .currency .symbol-outer {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%; }
+        .card-detail .currency .symbol-outer .symbol {
+          margin: 0 auto; } }
 
 .card-detail .conversion {
   float: right;
+  overflow: hidden;
   text-align: right;
   width: 50%; }
+  @media screen and (max-width: 400px) {
+    .card-detail .conversion {
+      float: none;
+      width: 100%; } }
   .card-detail .conversion .currency {
     color: #141D40;
     font-size: 36px;
     font-weight: 800;
     width: 100%; }
+    @media screen and (max-width: 400px) {
+      .card-detail .conversion .currency {
+        font-size: 28px;
+        text-align: center; } }
     .card-detail .conversion .currency .icon {
       color: #666;
       position: relative;

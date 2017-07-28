@@ -1,2 +1,84 @@
-.board-options h1 {
+.board-options h1, .board-options h3, .board-options p, .board-options a {
   color: #FFF; }
+
+.board-options h1 {
+  padding: 0 25px;
+  margin-bottom: 35px;
+  line-height: 28px; }
+
+.board-options h3 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 18px;
+  text-transform: uppercase; }
+  @media screen and (max-width: 960px) {
+    .board-options h3 {
+      font-size: 18px; } }
+  @media screen and (max-width: 550px) {
+    .board-options h3 {
+      font-size: 16px; } }
+
+.board-options .board-setup {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  display: table;
+  margin-bottom: 25px;
+  width: 100%; }
+
+.board-options ul {
+  padding: 25px; }
+  .board-options ul.view-options {
+    overflow: hidden; }
+    .board-options ul.view-options li {
+      float: left;
+      width: 50%; }
+      @media screen and (max-width: 550px) {
+        .board-options ul.view-options li {
+          float: none;
+          width: 100%; } }
+
+.board-options .settings {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px; }
+  .board-options .settings form {
+    overflow: hidden; }
+    .board-options .settings form label {
+      color: rgba(255, 255, 255, 0.7);
+      user-select: none; }
+      @media screen and (max-width: 550px) {
+        .board-options .settings form label {
+          font-size: 14px; } }
+    .board-options .settings form select {
+      left: -15px;
+      margin: 10px 0 0 0;
+      position: relative; }
+    .board-options .settings form .half {
+      display: table-cell;
+      padding-right: 15px;
+      width: 40%; }
+      .board-options .settings form .half.ticker {
+        width: 20%;
+        padding-right: 0; }
+      @media screen and (max-width: 960px) {
+        .board-options .settings form .half {
+          width: 33%; }
+          .board-options .settings form .half.ticker {
+            width: 33%; } }
+      @media screen and (max-width: 767px) {
+        .board-options .settings form .half {
+          display: table;
+          width: 100%; }
+          .board-options .settings form .half.ticker {
+            width: 100%; } }
+
+.board-options .app-info {
+  border-top: 1px dotted rgba(255, 255, 255, 0.3);
+  line-height: 16px;
+  margin-top: 25px;
+  padding: 25px; }
+  .board-options .app-info p {
+    margin: 0; }
+  .board-options .app-info small {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    padding-top: 5px; }

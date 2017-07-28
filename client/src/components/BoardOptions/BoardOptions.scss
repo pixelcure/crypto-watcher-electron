@@ -1,9 +1,97 @@
   //////////////////////////////////////////////
  // BOARD OPTIONS /////////////////////////////
 //////////////////////////////////////////////
+@import '../../styles/0_utility/mixins';
 
 
 
 .board-options {
-	h1 { color: #FFF; }
+	h1, h3, p, a { color: #FFF; }
+	h1 {
+		padding: 0 25px;
+		margin-bottom: 35px;
+		line-height: 28px;
+	}
+	h3 {
+		color: rgba(255, 255, 255, .95);
+		font-size: 20px;
+		font-weight: 800;
+		line-height: 18px;
+		text-transform: uppercase;
+		@include max-screen(960px){
+			font-size: 18px;
+		}
+		@include max-screen(550px){
+			font-size: 16px;
+		}
+	}
+	.board-setup {
+		border-bottom: 1px dotted rgba(255, 255, 255, .3);
+		display: table;
+		margin-bottom: 25px;
+		width: 100%;
+	}
+	ul {
+		padding: 25px;
+		&.view-options {
+			overflow: hidden;
+			li {
+				float: left;
+				width: 50%;
+				@include max-screen(550px){
+					float: none;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.settings {
+		background: rgba(255, 255, 255, .05);
+		border-radius: 5px;
+		form {
+			overflow: hidden;
+			label {
+				color: rgba(255, 255, 255, .7);
+				user-select: none;
+				@include max-screen(550px){
+					font-size: 14px;
+				}
+			}
+			select {
+				left: -15px;
+				margin: 10px 0 0 0;
+				position: relative;
+			}
+			.half {
+				display: table-cell;
+				padding-right: 15px;
+				width: 40%;
+				&.ticker { 
+					width: 20%;
+					padding-right: 0;
+				}
+				@include max-screen(960px){
+					width: 33%;
+					&.ticker { width: 33%; }
+				}
+				@include max-screen(767px){
+					display: table;
+					width: 100%;
+					&.ticker { width: 100%; }
+				}
+			}
+		}
+	}
+	.app-info {
+		border-top: 1px dotted rgba(255, 255, 255, .3);
+		line-height: 16px;
+		margin-top: 25px;
+		padding: 25px;
+		p { margin: 0; }
+		small {
+			color: rgba(255, 255, 255, .7);
+			display: block;
+			padding-top: 5px;
+		}
+	}
 }

@@ -10,3 +10,10 @@ export function fetchSettings (){
 		dispatch({type : 'FETCH_SETTINGS'})
 	};
 }
+
+// Action to fetch default settings
+export function fetchOptions (){
+	return (dispatch) => {
+		dispatch({type : 'FETCH_DEFAULT_OPTIONS'})
+	};
+}

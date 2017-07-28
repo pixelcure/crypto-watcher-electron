@@ -17,6 +17,8 @@
 header {
   animation-timing-function: ease-in;
   background: #ECF0F1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   color: #141D40;
   margin-bottom: 3%;
   overflow: hidden; }

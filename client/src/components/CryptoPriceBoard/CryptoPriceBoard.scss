@@ -1,29 +1,13 @@
   //////////////////////////////////////////////
  // CRYPTO PRICE BOARD ////////////////////////
 //////////////////////////////////////////////
+@import '../../styles/0_utility/mixins';
 @import '../../styles/1_core/vars';
 @import '../../styles/0_utility/movement';
 
 
+
 .price-board {
-	.refresh-board {
-		border: 0;
-		background: transparent;
-		cursor: pointer;
-		color: $white;
-		font-size: 1.5em;
-	    height: 25px;
-		outline: none;
-		padding: 0;
-		transition: .3s ease-in;
-	    width: 25px;
-		&:hover {
-			transform: rotate(360deg)
-		}
-		&:target {
-			transform: rotate(-360deg)
-		}
-	}
 	.loading {
 		margin: 25px auto;
 		text-align: center;
@@ -34,6 +18,43 @@
 		}
 	}
 } // End Price Board
+
+.dashboard {
+	background: rgba(255, 255, 255, .05);
+    border-radius: 5px;
+    margin: 0 0 1%;
+	overflow: hidden;
+    padding: 5px 10px;
+	user-select: none;
+	
+	li {
+		float: left;
+		&.refresh-feed {
+			float: right;
+		}
+	}
+	fieldset {
+	    margin: 7px 0 0 20px;
+	}
+	.refresh-board {
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+		color: $white;
+		font-size: 35px;
+	    height: 35px;
+		outline: none;
+		padding: 0;
+		transition: .3s ease-in;
+	    width: 35px;
+		&:hover {
+			transform: rotate(360deg)
+		}
+		&:target {
+			transform: rotate(-360deg)
+		}
+	}
+} // End Dashboard
 
 .pricecard-details {
 	margin: 0;
@@ -59,13 +80,23 @@
 	color: $navy;
 	float: left;
 	width: 50%;
-	.cell { float: left; }
+	@include max-screen(400px){
+		width: 100%;
+	}
+	.cell { 
+		float: left;
+	}
 	.crypto {
 		color: $teal;
 		display: block;
 		height: 65px; 
 	    margin: 2px 15px 0 0;
 		padding-top: 20px;
+		@include max-screen(400px){
+			margin: 0;
+			text-align: center;
+			width: 100%;
+		}
 	}
 	.symbol-outer {
 		border-right: 1px solid lighten($grey, 35);
@@ -81,18 +112,36 @@
 		    text-align: center;
 		    width: 65px;
 		}
+		@include max-screen(400px){
+			border: 0;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			.symbol {
+				margin: 0 auto;
+			}
+		}
 	}
 } // End Currency Child
 
 .card-detail .conversion {
 	float: right;
+	overflow: hidden;
 	text-align: right;
 	width: 50%;
+	@include max-screen(400px){
+		float: none;
+		width: 100%;
+	}
 	.currency {
 		color: $navy;
 		font-size: 36px;
 		font-weight: 800;
 		width: 100%;
+		@include max-screen(400px){
+			font-size: 28px;
+			text-align: center;
+		}
 		.icon {
 			color: $grey;
 			position: relative;

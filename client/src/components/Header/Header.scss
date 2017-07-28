@@ -9,6 +9,8 @@
 header {
 	animation-timing-function: ease-in;
     background: $white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     color: $navy;
     margin-bottom: 3%;
     overflow: hidden;
