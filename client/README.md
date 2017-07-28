@@ -20,4 +20,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 Builds the app for production to the `build` folder and pushes the website to [https://aerobatic.io](https://aerobatic.io) for hosting.
 This will only work if you have the `aerobatic` cli tool installed (`npm install aerobatic-cli -g`). 
 You will also need the correct admin access to deploy.
-<br>URL: [https://crypto-electron.aerobatic.io/](https://crypto-electron.aerobatic.io/)
+<br>URL: [https://thecryptocurrencyobserver.aerobatic.io](thecryptocurrencyobserver.aerobatic.io)
