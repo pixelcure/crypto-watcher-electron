@@ -72,7 +72,7 @@ class Settings extends Component {
 					</li>
 				</ul>
 			</div>
-		)
+		);
 	}
 
 	// Available Currencies
@@ -121,16 +121,14 @@ class Settings extends Component {
 	render() {
 		return(
 			<section className="settings">
-				<ul>
-					<form>
-						<div className="board-setup">
-							{ this.props.options ? this.renderAvailableCurrencies() : '' }
-							{ this.props.options ? this.renderAvailableConversions() : '' }
-							{ this.props.options ? this.renderTickerOptions() : '' }
-						</div>
-						{ this.props.options ? this.renderAvailableDetails() : '' }
-					</form>
-				</ul>
+				<form>
+					<div className="board-setup">
+						{ this.props.options ? this.renderAvailableCurrencies() : '' }
+						{ this.props.options ? this.renderAvailableConversions() : '' }
+						{ this.props.options ? this.renderTickerOptions() : '' }
+					</div>
+					{ this.props.options ? this.renderAvailableDetails() : '' }
+				</form>
 			</section>
 		);
 	}

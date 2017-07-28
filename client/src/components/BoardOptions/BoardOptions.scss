@@ -32,7 +32,10 @@
 		width: 100%;
 	}
 	ul {
-		padding: 25px;
+		padding: 0 25px;
+		@include max-screen(550px){
+			margin-bottom: 25px;
+		}
 		&.view-options {
 			overflow: hidden;
 			li {
@@ -50,6 +53,7 @@
 		border-radius: 5px;
 		form {
 			overflow: hidden;
+			padding: 25px;
 			label {
 				color: rgba(255, 255, 255, .7);
 				user-select: none;
