@@ -52,7 +52,7 @@ export default function (state={
 				
 				// Card
 				const card = {
-					name : cryptos[x],
+					currency : cryptos[x],
 					price : data.PRICE,
 					symbol : data.FROMSYMBOL,
 					conversionSymbol : data.TOSYMBOL,
