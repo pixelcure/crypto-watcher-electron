@@ -40,11 +40,6 @@ export default function (state={}, action){
 							detailVisible : false
 						},
 						{
-							detailKey : 'LASTUPDATE',
-							detailTitle : 'Last Update',
-							detailVisible : false
-						},
-						{
 							detailKey : 'LASTVOLUME',
 							detailTitle : 'Last Volume',
 							detailVisible : false
