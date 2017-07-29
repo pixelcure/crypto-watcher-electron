@@ -16,6 +16,10 @@
     @media screen and (max-width: 320px) {
       .board-options h1 {
         font-size: 23px; } }
+    @media screen and (max-width: 255px) {
+      .board-options h1 {
+        font-size: 20px;
+        padding: 0 5px; } }
   .board-options h3 {
     color: rgba(255, 255, 255, 0.8);
     font-size: 20px;
@@ -60,12 +64,21 @@
   .board-options .settings form {
     overflow: hidden;
     padding: 25px; }
+    @media screen and (max-width: 255px) {
+      .board-options .settings form {
+        padding: 15px 5px; } }
     .board-options .settings form label {
       color: rgba(255, 255, 255, 0.7);
       user-select: none; }
       @media screen and (max-width: 550px) {
         .board-options .settings form label {
           font-size: 14px; } }
+      @media screen and (max-width: 255px) {
+        .board-options .settings form label {
+          font-size: 12px; } }
+      @media screen and (max-width: 190px) {
+        .board-options .settings form label {
+          font-size: 10px; } }
     .board-options .settings form fieldset.ticker-interval {
       left: -15px;
       margin: 10px 0 0 0;

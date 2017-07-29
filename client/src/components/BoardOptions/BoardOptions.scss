@@ -25,6 +25,10 @@
 	    @include max-screen(320px){
 	    	font-size: 23px;
 	    }
+	    @include max-screen(255px){
+	    	font-size: 20px;
+	    	padding: 0 5px;
+	    }
 	}
 	h3 {
 		color: rgba(255, 255, 255, 0.80);
@@ -77,11 +81,20 @@
 	form {
 		overflow: hidden;
 		padding: 25px;
+		@include max-screen(255px){
+			padding: 15px 5px;
+		}
 		label {
 			color: rgba(255, 255, 255, .7);
 			user-select: none;
 			@include max-screen(550px){
 				font-size: 14px;
+			}
+			@include max-screen(255px){
+				font-size: 12px;
+			}
+			@include max-screen(190px){
+				font-size: 10px;
 			}
 		}
 		fieldset.ticker-interval {
