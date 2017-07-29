@@ -24,7 +24,7 @@ class BoardOptions extends Component {
 	render() {
 		return(
 			<section className="board-options">
-				<h1>Price Board Options</h1>
+				<h1>Board Options</h1>
 				<EnhancedSettings />
 				<AppInfo />
 	 	 	</section>
