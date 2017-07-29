@@ -99,6 +99,7 @@
   margin-top: 25px;
   padding: 25px 15px; }
   .board-options .app-info p {
+    font-size: 14px;
     margin: 0; }
   .board-options .app-info small {
     color: rgba(255, 255, 255, 0.7);
