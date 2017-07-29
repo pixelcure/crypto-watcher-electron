@@ -36,6 +36,22 @@
     float: left; }
     .dashboard li.refresh-feed {
       float: right; }
+      @media screen and (max-width: 195px) {
+        .dashboard li.refresh-feed {
+          float: none;
+          text-align: center; } }
+    @media screen and (max-width: 195px) {
+      .dashboard li {
+        float: none;
+        width: 100%; }
+        .dashboard li label {
+          font-size: 14px;
+          padding-left: 10px; }
+          .dashboard li label:before {
+            top: 0; }
+          .dashboard li label:after {
+            left: -9px;
+            top: 3px; } }
   .dashboard fieldset {
     margin: 7px 0 0 20px; }
   .dashboard .toggle-feed {
