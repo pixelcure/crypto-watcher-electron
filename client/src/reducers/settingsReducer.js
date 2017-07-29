@@ -5,7 +5,6 @@
 
 
 // SETTINGS ACTION TYPES
-const SHOW_CRYPTO_LIST = 'SHOW_CRYPTO_LIST'
 const FETCH_DEFAULT_OPTIONS = 'FETCH_DEFAULT_OPTIONS'
 const SAVE_SETTINGS = 'SAVE_SETTINGS'
 const FETCH_SETTINGS = 'FETCH_SETTINGS'
@@ -16,32 +15,44 @@ const FETCH_SETTINGS = 'FETCH_SETTINGS'
 export default function (state={}, action){
 
 	switch (action.type) {
-		case SHOW_CRYPTO_LIST : {
-
-			return {
-				...state,
-				currencies : ['LTC', 'BTC', 'ETH']
-			};
-
-		}
 		case FETCH_DEFAULT_OPTIONS : {
 
 			return {
 				...state,
 				options : {
-					currencies : ['LTC', 'BTC', 'ETH'],
-					conversions : ['USD', 'EUR'],
+					currencies : [
+						{
+							currency : 'ETH',
+							name : 'Ethereum',
+							enabled : true
+						},
+						{
+							currency : 'LTC',
+							name : 'Litecoin',
+							enabled : true
+						},
+						{
+							currency : 'BTC',
+							name : 'Bitcoin',
+							enabled : true
+						}
+					],
+					conversions : [{
+						currency : 'USD',
+						name : 'US Dollar',
+						enabled : true
+					},
+					{
+						currency : 'EUR',
+						name : 'Euro',
+						enabled : false
+					}],
 					tickInterval : 5000,
 					ticker : true,
 					detailOptions : [
 						{
 							detailKey : 'MARKET',
 							detailTitle : 'Market',
-							detailVisible : false
-						},
-						{
-							detailKey : 'LASTUPDATE',
-							detailTitle : 'Last Update',
 							detailVisible : false
 						},
 						{
@@ -114,8 +125,33 @@ export default function (state={}, action){
 			return {
 				...state,
 				settings : {
-					currencies : ['ETH', 'LTC', 'BTC'],
-					conversion : 'USD',
+					currencies : [
+						{
+							currency : 'ETH',
+							name : 'Ethereum',
+							enabled : true
+						},
+						{
+							currency : 'LTC',
+							name : 'Litecoin',
+							enabled : true
+						},
+						{
+							currency : 'BTC',
+							name : 'Bitcoin',
+							enabled : true
+						}
+					],
+					conversions : [{
+						currency : 'USD',
+						name : 'US Dollar',
+						enabled : true
+					},
+					{
+						currency : 'EUR',
+						name : 'Euro',
+						enabled : false
+					}],
 					detailOptions : [],
 					tickInterval : 5000,
 					ticker : true

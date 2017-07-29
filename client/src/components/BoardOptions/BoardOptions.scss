@@ -2,18 +2,32 @@
  // BOARD OPTIONS /////////////////////////////
 //////////////////////////////////////////////
 @import '../../styles/0_utility/mixins';
+@import '../../styles/1_core/vars';
 
 
 
+// Board Global
 .board-options {
 	h1, h3, p, a { color: #FFF; }
+	transition: .3s linear;
+
 	h1 {
-		padding: 0 25px;
-		margin-bottom: 35px;
-		line-height: 28px;
+		color: $teal;
+	    font-size: 28px;
+	    font-weight: 100;
+	    line-height: 28px;
+	    margin-bottom: 15px;
+	    padding: 0 15px;
+	    text-transform: uppercase;
+	    @include max-screen(960px){
+	    	font-size: 24px;
+	    }
+	    @include max-screen(320px){
+	    	font-size: 23px;
+	    }
 	}
 	h3 {
-		color: rgba(255, 255, 255, .95);
+		color: rgba(255, 255, 255, 0.80);
 		font-size: 20px;
 		font-weight: 800;
 		line-height: 18px;
@@ -28,16 +42,22 @@
 	.board-setup {
 		border-bottom: 1px dotted rgba(255, 255, 255, .3);
 		display: table;
-		margin-bottom: 25px;
+		margin-bottom: 35px;
 		width: 100%;
-	}
-	ul {
-		padding: 0 25px;
 		@include max-screen(550px){
 			margin-bottom: 25px;
 		}
+	}
+	ul {
+		padding: 0 25px 15px;
+		@include max-screen(550px){
+			margin-bottom: 25px;
+			padding-bottom: 5px;
+		}
 		&.view-options {
 			overflow: hidden;
+			margin-bottom: 0;
+			padding-bottom: 0;
 			li {
 				float: left;
 				width: 50%;
@@ -48,54 +68,64 @@
 			}
 		}
 	}
-	.settings {
-		background: rgba(255, 255, 255, .05);
-		border-radius: 5px;
-		form {
-			overflow: hidden;
-			padding: 25px;
-			label {
-				color: rgba(255, 255, 255, .7);
-				user-select: none;
-				@include max-screen(550px){
-					font-size: 14px;
-				}
-			}
-			select {
-				left: -15px;
-				margin: 10px 0 0 0;
-				position: relative;
-			}
-			.half {
-				display: table-cell;
-				padding-right: 15px;
-				width: 40%;
-				&.ticker { 
-					width: 20%;
-					padding-right: 0;
-				}
-				@include max-screen(960px){
-					width: 33%;
-					&.ticker { width: 33%; }
-				}
-				@include max-screen(767px){
-					display: table;
-					width: 100%;
-					&.ticker { width: 100%; }
-				}
-			}
-		}
-	}
-	.app-info {
-		border-top: 1px dotted rgba(255, 255, 255, .3);
-		line-height: 16px;
-		margin-top: 25px;
+} // End Board Options
+
+// Board Settings Form
+.board-options .settings {
+	background: rgba(255, 255, 255, .05);
+	border-radius: 5px;
+	form {
+		overflow: hidden;
 		padding: 25px;
-		p { margin: 0; }
-		small {
+		label {
 			color: rgba(255, 255, 255, .7);
-			display: block;
-			padding-top: 5px;
+			user-select: none;
+			@include max-screen(550px){
+				font-size: 14px;
+			}
 		}
+		fieldset.ticker-interval {
+			left: -15px;
+			margin: 10px 0 0 0;
+			position: relative;
+			select {
+				background: rgba(255, 255, 255, .1);
+				border-radius: 5px;
+				user-select: none;
+				// -webkit-appearance:none;
+			}
+		}
+		.third {
+			display: table-cell;
+			padding-right: 15px;
+			width: 40%;
+			&.ticker { 
+				width: 20%;
+				padding-right: 0;
+			}
+			@include max-screen(960px){
+				width: 33%;
+				&.ticker { width: 33%; }
+			}
+			@include max-screen(767px){
+				display: table;
+				width: 100%;
+				&.ticker { width: 100%; }
+			}
+		} // End Third
+	} // End Form
+} // End Settings
+
+// App Info
+.board-options .app-info {
+	border-top: 1px dotted rgba(255, 255, 255, .3);
+	line-height: 16px;
+	margin-top: 25px;
+	padding: 25px 15px;
+	p { margin: 0; }
+	small {
+		color: rgba(255, 255, 255, .7);
+		display: block;
+		padding-top: 5px;
 	}
-}
+} // End App Info

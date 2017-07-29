@@ -20,7 +20,7 @@ import Checkbox from '../Checkbox';
 import PriceCard from '../../hocs/PriceCard';
 
 // Enhanced Price Card Details
-const EnhancedPriceCardDetails = PriceCard(PriceCardDetails);
+const EnhancedPriceCardDetails = PriceCard(PriceCardDetails)
 
 // mapStateToProps
 const mapStateToProps = (state) => ({
@@ -33,18 +33,33 @@ class CryptoPriceBoard extends Component {
 	
 	constructor(props) {
 		super(props);
+
+		// Local state for currencies and conversion
+		this.state = {
+			currencies : props.settings ? props.settings.currencies.map((val) => val.currency).toString() : null,
+			conversion : props.settings ? props.settings.conversions.find((val) => val.enabled ).currency : null,
+			ticker : props.settings ? props.settings.ticker : true
+		}
+
+		// Start cost fetch interval
+		if (this.props.settings && this.state.ticker) {
+			// Fetch Cost
+			this.tickerMeter = setInterval(() => this.props.fetchCost(this.state.currencies, this.state.conversion), this.props.settings.tickInterval)
+		}
+
 		// Fetch board settings
 		this.props.fetchSettings()
 	}
 
 	componentWillMount() {
 		if(this.props.settings){
-			// Currencies String
-			let currencies = this.props.settings.currencies.toString()
-			// Currency Conversion
-			let conversion = this.props.settings.conversion
-			this.props.fetchCost(currencies, conversion)
+			// Fetch Cost
+			this.props.fetchCost(this.state.currencies, this.state.conversion)
 		}
+	}
+
+	componentWillUnmount() {
+		window.clearTimeout(this.tickerMeter)
 	}
 
 	fetching() {
@@ -69,10 +84,7 @@ class CryptoPriceBoard extends Component {
 	}
 
 	renderDashboard() {
-		// Currencies String
-		let currencies = this.props.settings.currencies.toString()
-		// Currency Conversion
-		let conversion = this.props.settings.conversion
+		
 		return(
 			<ul className="dashboard">
 				<li className="toggle-feed">
@@ -89,7 +101,7 @@ class CryptoPriceBoard extends Component {
 					<button 
 						title="Refresh Board" 
 						className="refresh-board"
-						onClick={() => this.props.fetchCost(currencies, conversion)}
+						onClick={() => this.props.fetchCost(this.state.currencies, this.state.conversion)}
 					>
 						<span className="icon icon-refresh"></span>
 					</button>

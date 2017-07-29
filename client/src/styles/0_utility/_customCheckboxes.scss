@@ -27,21 +27,23 @@
   height: 15px;
   left: -15px;
   position: absolute;
-  top: 3px;
+  top: 1px;
   width: 15px;
 }
 // checked mark aspect
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
-    content: '✔';
+    content: '•';
     color: #FFF;
     font-size: 15px;
-    left: -15px;
-    left: -12px;
+    left: -10px;
     line-height: 0.8;
     position: absolute;
-    top: 6px;
+    top: 4px;
     transition: all .2s;
+    @include max-screen(414px){
+      left: -9px;
+    }
 }
 // checked mark aspect changes
 [type="checkbox"]:not(:checked) + label:after {
