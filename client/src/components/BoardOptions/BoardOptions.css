@@ -68,8 +68,7 @@
       .board-options .settings form {
         padding: 15px 5px; } }
     .board-options .settings form label {
-      color: rgba(255, 255, 255, 0.7);
-      user-select: none; }
+      color: rgba(255, 255, 255, 0.7); }
       @media screen and (max-width: 550px) {
         .board-options .settings form label {
           font-size: 14px; } }
@@ -85,8 +84,7 @@
       position: relative; }
       .board-options .settings form fieldset.ticker-interval select {
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 5px;
-        user-select: none; }
+        border-radius: 5px; }
     .board-options .settings form .third {
       display: table-cell;
       padding-right: 15px;
@@ -114,7 +112,13 @@
   .board-options .app-info p {
     font-size: 14px;
     margin: 0; }
+    @media screen and (max-width: 255px) {
+      .board-options .app-info p {
+        font-size: 12px; } }
   .board-options .app-info small {
     color: rgba(255, 255, 255, 0.7);
     display: block;
     padding-top: 5px; }
+    @media screen and (max-width: 255px) {
+      .board-options .app-info small {
+        font-size: 10px; } }
