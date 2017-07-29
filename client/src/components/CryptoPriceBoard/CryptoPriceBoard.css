@@ -146,10 +146,17 @@
       .card-detail .conversion .currency {
         font-size: 32px;
         text-align: center; } }
+    @media screen and (max-width: 215px) {
+      .card-detail .conversion .currency {
+        font-size: 24px; } }
     .card-detail .conversion .currency .icon {
       color: #666;
       position: relative;
       top: 2px; }
+      @media screen and (max-width: 290px) {
+        .card-detail .conversion .currency .icon {
+          display: block;
+          margin-bottom: 15px; } }
   .card-detail .conversion .last-update {
     display: block;
     font-size: 14px;
@@ -160,5 +167,8 @@
     @media screen and (max-width: 400px) {
       .card-detail .conversion .last-update {
         margin-top: 5px; } }
+    @media screen and (max-width: 215px) {
+      .card-detail .conversion .last-update {
+        font-size: 10px; } }
   .card-detail .conversion .details {
     display: none; }

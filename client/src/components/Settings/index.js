@@ -16,6 +16,10 @@ class Settings extends Component {
 		this.props.fetchOptions()
 	}
 
+	shouldComponentUpdate(nextProps, nextState) {
+		return true;
+	}
+	
 	handleChange() {
 
 	}

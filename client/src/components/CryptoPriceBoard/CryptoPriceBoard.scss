@@ -157,10 +157,17 @@
 			font-size: 32px;
 			text-align: center;
 		}
+		@include max-screen(215px){
+			font-size: 24px;
+		}
 		.icon {
 			color: $grey;
 			position: relative;
 			top: 2px;
+			@include max-screen(290px){
+				display: block;
+				margin-bottom: 15px;
+			}
 		}
 	}
 	.last-update {
@@ -170,6 +177,9 @@
 		b { color: $grey; font-weight: 800; }
 		@include max-screen(400px){
 			margin-top: 5px;
+		}
+		@include max-screen(215px){
+			font-size: 10px;
 		}
 	}
 	.details {

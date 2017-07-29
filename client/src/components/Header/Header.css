@@ -29,3 +29,6 @@ header {
     margin: 3px 0 0 15px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     user-select: none; }
+    @media screen and (max-width: 290px) {
+      header .logo {
+        display: none; } }

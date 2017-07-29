@@ -3,6 +3,7 @@
 //////////////////////////////////////////////
 @import '../../styles/1_core/_vars';
 @import '../../styles/0_utility/_movement';
+@import '../../styles/0_utility/_mixins';
 
 
 
@@ -21,5 +22,8 @@ header {
 	    margin: 3px 0 0 15px;
 	    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
         user-select: none;
+        @include max-screen(290px){
+            display: none;
+        }
     }
 } // End Header
