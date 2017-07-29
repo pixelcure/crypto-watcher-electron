@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 
 // Components
 import Checkbox from '../Checkbox';
+import Selectbox from '../Selectbox';
 
 // <Settings /> Component
 class Settings extends Component {
@@ -24,61 +25,6 @@ class Settings extends Component {
 
 	}
 
-	// Available Currency Conversions
-	renderAvailableConversions() {
-		return(
-			<div className="available-conversions third">
-				<h3>Conversions</h3>
-				<ul className="conversions">
-					{ this.props.options.conversions.map((val, i) => 
-						<li key={i}>
-							<Checkbox
-								label={val.name}
-								name={val.currency}
-								onChange={this.handleChange.bind(this)}
-							/>
-						</li>
-					)}
-				</ul>
-			</div>
-		);
-	}
-
-	renderTickerOptions() {
-		return(
-			<div className="ticker third">
-				<h3>Auto refresh</h3>
-				<ul className="ticker-interval">
-					<li>
-						<Checkbox
-							label="Auto refresh"
-							name="ticker"
-							checked={this.props.settings.ticker}
-							onChange={this.handleChange.bind(this)}
-						/>
-					</li>
-					<li>
-						<fieldset className="ticker-interval">
-							<select name="tickerInterval" id="tickerInterval">
-								<option value="5000">5 seconds</option>
-								<option value="10000">10 seconds</option>
-								<option value="20000">20 seconds</option>
-								<option value="30000">30 seconds</option>
-								<option value="60000">1 minute</option>
-								<option value="120000">2 minutes</option>
-								<option value="180000">3 minutes</option>
-								<option value="240000">4 minutes</option>
-								<option value="300000">5 minutes</option>
-								<option value="600000">10 minutes</option>
-								<option value="900000">15 minutes</option>
-							</select>
-						</fieldset>
-					</li>
-				</ul>
-			</div>
-		);
-	}
-
 	// Available Currencies
 	renderAvailableCurrencies() {
 		return(
@@ -90,6 +36,7 @@ class Settings extends Component {
 							<Checkbox
 								label={val.name}
 								name={val.currency}
+								checked={val.enabled}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</li>
@@ -97,6 +44,54 @@ class Settings extends Component {
 				</ul>
 			</div>
 		);	
+	}
+
+	// Available Currency Conversions
+	renderAvailableConversions() {
+		return(
+			<div className="available-conversions third">
+				<h3>Conversions</h3>
+				<ul className="conversions">
+					{ this.props.options.conversions.map((val, i) => 
+						<li key={i}>
+							<Checkbox
+								label={val.name}
+								name={val.currency}
+								checked={val.eneabled}
+								onChange={this.handleChange.bind(this)}
+							/>
+						</li>
+					)}
+				</ul>
+			</div>
+		);
+	}
+
+	// Render Ticker Options
+	renderTickerOptions() {
+		return(
+			<div className="ticker third">
+				<h3>Auto refresh</h3>
+				<ul className="ticker-interval">
+					<li>
+						<Checkbox
+							label="Auto refresh"
+							name="ticker"
+							checked={this.props.options.ticker}
+							onChange={this.handleChange.bind(this)}
+						/>
+					</li>
+					<li>
+						<Selectbox 
+							options={this.props.options.tickerIntervals}
+							name="tickerInterval"
+							cssClass="ticker-interval"
+							onChange={this.handleChange.bind(this)}
+						/>
+					</li>
+				</ul>
+			</div>
+		);
 	}
 
 	// Available Details
@@ -108,11 +103,9 @@ class Settings extends Component {
 					{ this.props.options.detailOptions.map((val, i) => 
 						<li key={i}>
 							<Checkbox
-								key={i}
 								label={val.detailTitle}
 								name={val.detailKey}
 								checked={val.detailVisible}
-								data-visible={val.detailVisible}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</li>
@@ -122,6 +115,7 @@ class Settings extends Component {
 		);	
 	}
 
+	// Component Render
 	render() {
 		return(
 			<section className="settings">
@@ -136,6 +130,7 @@ class Settings extends Component {
 			</section>
 		);
 	}
+
 }
 
 

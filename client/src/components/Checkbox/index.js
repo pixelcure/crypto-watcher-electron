@@ -13,7 +13,8 @@ class Checkbox extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			checked : props.checked
+			checked : props.checked,
+			value : props.checked
 		}
 	}
 
@@ -25,6 +26,7 @@ class Checkbox extends Component {
 					id={this.props.name} 
 					name={this.props.name} 
 					checked={this.props.checked}
+					value={this.props.checked}
 					onChange={this.props.onChange}
 				/>
 				<label htmlFor={this.props.name}>

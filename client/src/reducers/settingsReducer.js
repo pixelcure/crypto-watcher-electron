@@ -2,7 +2,8 @@
  // SETTINGS REDUCER ///////////////////////////
 ///////////////////////////////////////////////
 
-
+// Available Options
+import { options, defaultSettings } from '../util/';
 
 // SETTINGS ACTION TYPES
 const FETCH_DEFAULT_OPTIONS = 'FETCH_DEFAULT_OPTIONS'
@@ -19,104 +20,7 @@ export default function (state={}, action){
 
 			return {
 				...state,
-				options : {
-					currencies : [
-						{
-							currency : 'ETH',
-							name : 'Ethereum',
-							enabled : true
-						},
-						{
-							currency : 'LTC',
-							name : 'Litecoin',
-							enabled : true
-						},
-						{
-							currency : 'BTC',
-							name : 'Bitcoin',
-							enabled : true
-						}
-					],
-					conversions : [{
-						currency : 'USD',
-						name : 'US Dollar',
-						enabled : true
-					},
-					{
-						currency : 'EUR',
-						name : 'Euro',
-						enabled : false
-					}],
-					tickInterval : 5000,
-					ticker : true,
-					detailOptions : [
-						{
-							detailKey : 'MARKET',
-							detailTitle : 'Market',
-							detailVisible : false
-						},
-						{
-							detailKey : 'LASTVOLUME',
-							detailTitle : 'Last Volume',
-							detailVisible : false
-						},
-						{
-							detailKey : 'LASTVOLUMETO',
-							detailTitle : 'Last Volume Price %',
-							detailVisible : false
-						},
-						{
-							detailKey : 'LASTTRADEID',
-							detailTitle : 'Last Trade ID',
-							detailVisible : false
-						},
-						{
-							detailKey : 'VOLUME24HOUR',
-							detailTitle : '24hr Volume Price',
-							detailVisible : false
-						},
-						{
-							detailKey : 'VOLUME24HOURTO',
-							detailTitle : '24hr Volume %',
-							detailVisible : false
-						},
-						{
-							detailKey : 'OPEN24HOUR',
-							detailTitle : 'Open 24hr Price',
-							detailVisible : false
-						},
-						{
-							detailKey : 'HIGH24HOUR',
-							detailTitle : 'High 24hr Price',
-							detailVisible : false
-						},
-						{
-							detailKey : 'LOW24HOUR',
-							detailTitle : 'Low 24hr Price',
-							detailVisible : false
-						},
-						{
-							detailKey : 'CHANGE24HOUR',
-							detailTitle : 'Change in 24hr Price',
-							detailVisible : false
-						},
-						{
-							detailKey : 'CHANGEPCT24HOUR',
-							detailTitle : 'Change in 24hr %',
-							detailVisible : false
-						},
-						{
-							detailKey : 'SUPPLY',
-							detailTitle : 'Coin Supply',
-							detailVisible : false
-						},
-						{
-							detailName : 'MKTCAP',
-							detailTitle : 'Market Cap',
-							detailVisible : false
-						}
-					]
-				}
+				options
 			};
 
 		}
@@ -124,38 +28,7 @@ export default function (state={}, action){
 
 			return {
 				...state,
-				settings : {
-					currencies : [
-						{
-							currency : 'ETH',
-							name : 'Ethereum',
-							enabled : true
-						},
-						{
-							currency : 'LTC',
-							name : 'Litecoin',
-							enabled : true
-						},
-						{
-							currency : 'BTC',
-							name : 'Bitcoin',
-							enabled : true
-						}
-					],
-					conversions : [{
-						currency : 'USD',
-						name : 'US Dollar',
-						enabled : true
-					},
-					{
-						currency : 'EUR',
-						name : 'Euro',
-						enabled : false
-					}],
-					detailOptions : [],
-					tickInterval : 5000,
-					ticker : true
-				}
+				settings : defaultSettings
 			}
 
 		}
