@@ -33,6 +33,25 @@
 		float: left;
 		&.refresh-feed {
 			float: right;
+			@include max-screen(195px){
+				float: none;
+			    text-align: center;
+			}
+		}
+		@include max-screen(195px){
+			float: none;
+			width: 100%;
+			label {
+				font-size: 14px;
+				padding-left: 10px;
+				&:before {
+					top: 0;
+				}
+				&:after {
+					left: -9px;
+					top: 3px;
+				}
+			}
 		}
 	}
 	fieldset {

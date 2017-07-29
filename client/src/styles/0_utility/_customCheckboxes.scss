@@ -1,6 +1,7 @@
   ///////////////////////////////////////////
  // CUSTOM CHECKBOXES /////////////////////
 /////////////////////////////////////////
+@import './mixins';
 
 
 
@@ -29,7 +30,15 @@
   position: absolute;
   top: 1px;
   width: 15px;
+  @include max-screen(255px){
+    top: -1px;
+  }
+  @include max-screen(190px){
+      top: -2px;
+  }
 }
+
+
 // checked mark aspect
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
@@ -43,6 +52,12 @@
     transition: all .2s;
     @include max-screen(414px){
       left: -9px;
+    }
+    @include max-screen(255px){
+      top: 2px;
+    }
+    @include max-screen(190px){
+      top: 1px;
     }
 }
 // checked mark aspect changes
