@@ -122,7 +122,10 @@
 	line-height: 16px;
 	margin-top: 25px;
 	padding: 25px 15px;
-	p { margin: 0; }
+	p { 
+		font-size: 14px;
+		margin: 0; 
+	}
 	small {
 		color: rgba(255, 255, 255, .7);
 		display: block;

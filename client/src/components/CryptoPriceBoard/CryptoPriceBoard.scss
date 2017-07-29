@@ -44,12 +44,16 @@
 		background: transparent;
 		cursor: pointer;
 		color: $white;
-		font-size: 35px;
-	    height: 35px;
+		font-size: 30px;
+	    height: 30px;
 		outline: none;
 		padding: 0;
 		transition: .3s ease-in;
-	    width: 35px;
+	    width: 30px;
+	    button {
+	    	position: relative;
+	    	top: 3px;
+	    }
 		&:hover {
 			transform: rotate(360deg)
 		}
@@ -67,12 +71,11 @@
 		animation: .5s fadeIn forwards;
 		animation-delay: .3s;
 		background: $white;
-		background: -webkit-linear-gradient(top, rgba(240,249,255,1) 0%,rgba(239,239,239,1) 100%);
+		background: -webkit-linear-gradient(top, #c2e3f8 0%,rgba(239,239,239, 1) 100%);
 		border-radius: 5px;
 		box-shadow: 5px 5px 15px rgba(255, 255, 255, .15);
 		overflow: hidden;
-		margin-bottom: 25px;
-		min-height: 100px;
+		margin-bottom: 15px;
 		opacity: 0;
 		padding: 1.5% 3%;	
 		&:last-child { margin-bottom: 0; }
@@ -157,19 +160,31 @@
 			font-size: 32px;
 			text-align: center;
 		}
+		@include max-screen(215px){
+			font-size: 24px;
+		}
 		.icon {
 			color: $grey;
+			left: 3px;
 			position: relative;
 			top: 2px;
+			@include max-screen(290px){
+				display: block;
+				margin-bottom: 15px;
+			}
 		}
 	}
 	.last-update {
+		color: $grey;
 		display: block;
 		font-size: 14px;
-		margin-top: 10px;
-		b { color: $grey; font-weight: 800; }
+		margin-top: 7px;
+		b { color: $navy; font-weight: 800; }
 		@include max-screen(400px){
 			margin-top: 5px;
+		}
+		@include max-screen(215px){
+			font-size: 10px;
 		}
 	}
 	.details {
