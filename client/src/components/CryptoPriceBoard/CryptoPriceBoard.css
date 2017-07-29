@@ -29,12 +29,17 @@
   overflow: hidden;
   padding: 5px 10px;
   user-select: none; }
+  @media screen and (max-width: 414px) {
+    .dashboard {
+      margin-bottom: 3%; } }
   .dashboard li {
     float: left; }
     .dashboard li.refresh-feed {
       float: right; }
   .dashboard fieldset {
     margin: 7px 0 0 20px; }
+  .dashboard .toggle-feed {
+    display: block; }
   .dashboard .refresh-board {
     border: 0;
     background: transparent;
@@ -71,12 +76,41 @@
     .pricecard-details .card-detail:first-child {
       animation-delay: none; }
 
+.pricecard-details .symbol-outer {
+  border-right: 1px solid #bfbfbf;
+  margin: 1px 15px 0 0;
+  padding-right: 15px; }
+  .pricecard-details .symbol-outer .symbol {
+    border: 5px solid #141D40;
+    border-radius: 360px;
+    font-size: 50px;
+    font-weight: 100;
+    height: 65px;
+    padding-top: 17px;
+    text-align: center;
+    width: 65px; }
+  @media screen and (max-width: 400px) {
+    .pricecard-details .symbol-outer {
+      border-right: 1px solid rgba(0, 0, 0, 0.07);
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 50%; }
+      .pricecard-details .symbol-outer .symbol {
+        font-size: 39px;
+        height: 55px;
+        margin: 5px auto 10px;
+        padding-top: 12px;
+        width: 55px; } }
+
 .card-detail .currency {
   color: #141D40;
   float: left;
   width: 50%; }
   @media screen and (max-width: 400px) {
     .card-detail .currency {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      margin-bottom: 15px;
       width: 100%; } }
   .card-detail .currency .cell {
     float: left; }
@@ -88,30 +122,10 @@
     padding-top: 20px; }
     @media screen and (max-width: 400px) {
       .card-detail .currency .crypto {
+        float: left;
         margin: 0;
         text-align: center;
-        width: 100%; } }
-  .card-detail .currency .symbol-outer {
-    border-right: 1px solid #bfbfbf;
-    margin: 1px 15px 0 0;
-    padding-right: 15px; }
-    .card-detail .currency .symbol-outer .symbol {
-      border: 5px solid #141D40;
-      border-radius: 360px;
-      font-size: 50px;
-      font-weight: 100;
-      height: 65px;
-      padding-top: 17px;
-      text-align: center;
-      width: 65px; }
-    @media screen and (max-width: 400px) {
-      .card-detail .currency .symbol-outer {
-        border: 0;
-        margin: 0;
-        padding: 0;
-        width: 100%; }
-        .card-detail .currency .symbol-outer .symbol {
-          margin: 0 auto; } }
+        width: 50%; } }
 
 .card-detail .conversion {
   float: right;
@@ -123,13 +137,14 @@
       float: none;
       width: 100%; } }
   .card-detail .conversion .currency {
+    border: 0;
     color: #141D40;
     font-size: 36px;
     font-weight: 800;
     width: 100%; }
     @media screen and (max-width: 400px) {
       .card-detail .conversion .currency {
-        font-size: 28px;
+        font-size: 32px;
         text-align: center; } }
     .card-detail .conversion .currency .icon {
       color: #666;
@@ -142,5 +157,8 @@
     .card-detail .conversion .last-update b {
       color: #666;
       font-weight: 800; }
+    @media screen and (max-width: 400px) {
+      .card-detail .conversion .last-update {
+        margin-top: 5px; } }
   .card-detail .conversion .details {
     display: none; }

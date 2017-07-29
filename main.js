@@ -13,15 +13,15 @@ function createWindow () {
   win = new BrowserWindow({
     transparent : true,
     draggable : true,
-    width: 300,
-    height: 400
+    width: 550,
+    height: 550
   })
 
   // and load the index.html of the app.
   win.loadURL('http://localhost:3000')
   
   // Open the DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {

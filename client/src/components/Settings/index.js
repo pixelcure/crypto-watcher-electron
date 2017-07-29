@@ -23,14 +23,14 @@ class Settings extends Component {
 	// Available Currency Conversions
 	renderAvailableConversions() {
 		return(
-			<div className="available-conversions half">
+			<div className="available-conversions third">
 				<h3>Conversions</h3>
 				<ul className="conversions">
 					{ this.props.options.conversions.map((val, i) => 
 						<li key={i}>
 							<Checkbox
-								label={val}
-								name={val}
+								label={val.name}
+								name={val.currency}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</li>
@@ -42,7 +42,7 @@ class Settings extends Component {
 
 	renderTickerOptions() {
 		return(
-			<div className="ticker half">
+			<div className="ticker third">
 				<h3>Auto refresh</h3>
 				<ul className="ticker-interval">
 					<li>
@@ -54,7 +54,7 @@ class Settings extends Component {
 						/>
 					</li>
 					<li>
-						<fieldset>
+						<fieldset className="ticker-interval">
 							<select name="tickerInterval" id="tickerInterval">
 								<option value="5000">5 seconds</option>
 								<option value="10000">10 seconds</option>
@@ -78,14 +78,14 @@ class Settings extends Component {
 	// Available Currencies
 	renderAvailableCurrencies() {
 		return(
-			<div className="available-currencies half">
+			<div className="available-currencies third">
 				<h3>Currencies</h3>
 				<ul className="currencies">
 					{ this.props.options.currencies.map((val, i) => 
 						<li key={i}>
 							<Checkbox
-								label={val}
-								name={val}
+								label={val.name}
+								name={val.currency}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</li>
