@@ -33,6 +33,7 @@ class Checkbox extends Component {
 			</fieldset>
 		);
 	}
+
 }
 
 
