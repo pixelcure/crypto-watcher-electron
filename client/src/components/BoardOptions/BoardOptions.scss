@@ -34,6 +34,9 @@
 	    	margin-bottom: 0;
 	    	padding: 0 5px;
 	    }
+	    @include max-screen(195px){
+	    	font-size: 18px;
+	    }
 	}
 	h3 {
 		color: rgba(255, 255, 255, 0.80);
@@ -103,12 +106,35 @@
 			&.checked { color: $white; }
 		}
 		fieldset.ticker-interval {
+			background: rgba(255, 255, 255, .1);
 			left: -15px;
 			margin: 10px 0 0 0;
 			position: relative;
+
+			&:after {
+				bottom: 0;
+				content: '▼';
+				color: $teal;
+				font-size: 13px;
+				position: absolute;
+				pointer-events: none;
+				right: 0;
+				text-align: center;
+				width: 37px;
+				z-index: 2;
+				@include max-screen(195px){
+					right: -5px;
+				}
+			}
 			select {
-				background: rgba(255, 255, 255, .1);
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				background: transparent;
 				border-radius: 5px;
+				padding: 3px 10px;
+				@include max-screen(195px){
+					font-size: 12px;
+				}
 			}
 		}
 		.third {
