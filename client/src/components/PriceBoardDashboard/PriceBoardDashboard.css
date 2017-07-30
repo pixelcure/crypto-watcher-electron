@@ -1,0 +1,51 @@
+.dashboard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  margin: 0 0 1%;
+  overflow: hidden;
+  padding: 5px 10px; }
+  @media screen and (max-width: 414px) {
+    .dashboard {
+      margin-bottom: 3%; } }
+  .dashboard li {
+    float: left; }
+    .dashboard li.refresh-feed {
+      float: right; }
+      @media screen and (max-width: 195px) {
+        .dashboard li.refresh-feed {
+          float: none;
+          text-align: center; } }
+    @media screen and (max-width: 195px) {
+      .dashboard li {
+        float: none;
+        width: 100%; }
+        .dashboard li label {
+          font-size: 14px;
+          padding-left: 10px; }
+          .dashboard li label:before {
+            top: 0; }
+          .dashboard li label:after {
+            left: -9px;
+            top: 3px; } }
+  .dashboard fieldset {
+    margin: 7px 0 0 20px; }
+  .dashboard .toggle-feed {
+    display: block; }
+  .dashboard .refresh-board {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    color: #ECF0F1;
+    font-size: 30px;
+    height: 30px;
+    outline: none;
+    padding: 0;
+    transition: .3s ease-in;
+    width: 30px; }
+    .dashboard .refresh-board button {
+      position: relative;
+      top: 3px; }
+    .dashboard .refresh-board:hover {
+      transform: rotate(360deg); }
+    .dashboard .refresh-board:target {
+      transform: rotate(-360deg); }

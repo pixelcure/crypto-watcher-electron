@@ -14,7 +14,7 @@ import * as mapDispatchToProps from '../../actions/priceCardActions';
 
 // Components
 import PriceCardDetails from '../PriceCardDetails';
-import Checkbox from '../Checkbox';
+import PriceBoardDashboard from '../PriceBoardDashboard';
 
 // PriceCard HOC
 import PriceCard from '../../hocs/PriceCard';
@@ -62,19 +62,9 @@ class CryptoPriceBoard extends Component {
 		window.clearTimeout(this.tickerMeter)
 	}
 
-	fetching() {
-		return (
-			<div className="loading">
-				<span className="icon icon-loading"></span>
-			</div>
-		);
-	}
-
 	renderError() {
 		return (
-			<strong className="error">
-				{ this.props.error }
-			</strong>
+			<strong className="error">{ this.props.error }</strong>
 		);
 	}
 
@@ -83,40 +73,21 @@ class CryptoPriceBoard extends Component {
 		this.props.saveSettings(newSettings)
 	}
 
-	renderDashboard() {
-		
-		return(
-			<ul className="dashboard">
-				<li className="toggle-feed">
-					<form>
-						<Checkbox
-							onChange={this.handleTickerToggle.bind(this)}
-							checked={this.props.settings.tickerOn}
-							name="ticker"
-							label="Auto Refresh"
-						/>
-					</form>
-				</li>
-				<li className="refresh-feed">
-					<button 
-						title="Refresh Board" 
-						className="refresh-board"
-						onClick={() => this.props.fetchCost(this.state.currencies, this.state.conversion)}
-					>
-						<span className="icon icon-refresh"></span>
-					</button>
-				</li>
-			</ul>
-		);
-	}
-
 	render() {
 		return(
 			<div className="price-board">
-				{ this.props.settings ? this.renderDashboard() : '' }
-				{ this.props.fetching ? this.fetching() : '' }
-				{ this.props.error ? this.renderError() : '' }
+				{ this.props.settings ? 
+					<PriceBoardDashboard 
+						onChange={this.handleTickerToggle.bind(this)}
+						checked={this.props.settings.tickerOn}
+						name="ticker"
+						label="Auto Refresh"
+						currencies={this.state.currencies}
+						conversion={this.state.conversion}
+						onClick={this.props.fetchCost}
+					/> : '' }
 				{ this.props.priceCards ? <EnhancedPriceCardDetails /> : '' }
+				{ this.props.error ? this.renderError() : '' }
 			</div>
 		);
 	}

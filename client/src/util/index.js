@@ -203,7 +203,18 @@ export const defaultSettings = {
 			enabled : false
 		}
 	],
-	details : [],
+	details : [
+	    {
+	        name : 'CHANGEPCT24HOUR',
+	        label : 'Change in 24hr %',
+	        enabled : true
+	    },
+	    {
+	        name : 'SUPPLY',
+	        label : 'Coin Supply',
+	        enabled : true
+	    }
+	],
 	ticker : {
         interval: 10000,
         label: '10 seconds',
