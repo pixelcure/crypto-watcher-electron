@@ -4,7 +4,7 @@
 
 // Dependencies
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // CSS
 import './Nav.css';
@@ -17,14 +17,14 @@ const Nav = () => {
 		<nav>
 			<ul className="list">
 				<li className="list__clean">
-					<Link title="Price Board" to="/">
+					<NavLink exact title="Price Board" activeClassName="active" to="/">
 						<span className="icon icon-stats"></span>
-					</Link>
+					</NavLink>
 				</li>
 				<li className="list__clean">
-					<Link title="Board Options" to="/options">
+					<NavLink title="Board Options" activeClassName="active" to="/options">
 						<span className="icon icon-settings"></span>
-					</Link>
+					</NavLink>
 				</li>
 			</ul>
 		</nav>

@@ -24,6 +24,9 @@ nav {
 				.icon {
 					vertical-align: -2px;
 				}
+				&.active {
+					color: $teal;
+				}
 			}
 		}
 	}

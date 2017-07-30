@@ -14,3 +14,5 @@ nav {
       padding: 0 5px; }
       nav ul li a .icon {
         vertical-align: -2px; }
+      nav ul li a.active {
+        color: #008080; }
