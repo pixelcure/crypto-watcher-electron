@@ -79,7 +79,7 @@
   padding: 0; }
   .pricecard-details .card-detail {
     animation: .5s fadeIn forwards;
-    animation-delay: .3s;
+    animation-delay: .25s;
     background: #ECF0F1;
     background: -webkit-linear-gradient(top, #c2e3f8 0%, #efefef 100%);
     border-radius: 5px;

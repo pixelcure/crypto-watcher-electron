@@ -12,59 +12,12 @@ import Selectbox from '../Selectbox';
 // <Settings /> Component
 class Settings extends Component {
 
-	constructor(props) {
-		super(props)
+	componentWillMount() {
 		this.props.fetchOptions()
 	}
-
-	shouldComponentUpdate(nextProps, nextState) {
-		return true;
-	}
 	
-	handleChange() {
-
-	}
-
-	// Available Currencies
-	renderAvailableCurrencies() {
-		return(
-			<div className="available-currencies third">
-				<h3>Currencies</h3>
-				<ul className="currencies">
-					{ this.props.options.currencies.map((val, i) => 
-						<li key={i}>
-							<Checkbox
-								label={val.name}
-								name={val.currency}
-								checked={val.enabled}
-								onChange={this.handleChange.bind(this)}
-							/>
-						</li>
-					)}
-				</ul>
-			</div>
-		);	
-	}
-
-	// Available Currency Conversions
-	renderAvailableConversions() {
-		return(
-			<div className="available-conversions third">
-				<h3>Conversions</h3>
-				<ul className="conversions">
-					{ this.props.options.conversions.map((val, i) => 
-						<li key={i}>
-							<Checkbox
-								label={val.name}
-								name={val.currency}
-								checked={val.eneabled}
-								onChange={this.handleChange.bind(this)}
-							/>
-						</li>
-					)}
-				</ul>
-			</div>
-		);
+	handleChange(e) {
+		console.log(e);
 	}
 
 	// Render Ticker Options
@@ -77,7 +30,7 @@ class Settings extends Component {
 						<Checkbox
 							label="Auto refresh"
 							name="ticker"
-							checked={this.props.options.ticker}
+							checked={this.props.options.tickerOn}
 							onChange={this.handleChange.bind(this)}
 						/>
 					</li>
@@ -94,25 +47,25 @@ class Settings extends Component {
 		);
 	}
 
-	// Available Details
-	renderAvailableDetails() {
+	// Available Currency Conversions
+	renderOptions(options, outerCssClass, listCssClass, label) {
 		return(
-			<div className="extra-available-details">
-				<h3>Details</h3>
-				<ul className="view-options">
-					{ this.props.options.detailOptions.map((val, i) => 
+			<div className={outerCssClass}>
+				<h3>{label}</h3>
+				<ul className={listCssClass}>
+					{ options.map((val, i) => 
 						<li key={i}>
 							<Checkbox
-								label={val.detailTitle}
-								name={val.detailKey}
-								checked={val.detailVisible}
+								label={val.label}
+								name={val.name}
+								checked={val.enabled}
 								onChange={this.handleChange.bind(this)}
 							/>
 						</li>
 					)}
 				</ul>
 			</div>
-		);	
+		);
 	}
 
 	// Component Render
@@ -121,11 +74,11 @@ class Settings extends Component {
 			<section className="settings">
 				<form>
 					<div className="board-setup">
-						{ this.props.options ? this.renderAvailableCurrencies() : '' }
-						{ this.props.options ? this.renderAvailableConversions() : '' }
+						{ this.props.options ? this.renderOptions(this.props.options.currencies, 'available-currencies third', 'currencies', 'Currencies') : '' }
+						{ this.props.options ? this.renderOptions(this.props.options.conversions, 'available-conversions third', 'conversions', 'Conversions') : '' }
 						{ this.props.options ? this.renderTickerOptions() : '' }
 					</div>
-					{ this.props.options ? this.renderAvailableDetails() : '' }
+					{ this.props.options ? this.renderOptions(this.props.options.detailOptions, 'extra-available-details', 'view-options', 'Details') : '' }
 				</form>
 			</section>
 		);

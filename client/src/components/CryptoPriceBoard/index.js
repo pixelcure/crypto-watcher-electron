@@ -36,15 +36,15 @@ class CryptoPriceBoard extends Component {
 
 		// Local state for currencies and conversion
 		this.state = {
-			currencies : props.settings ? props.settings.currencies.map((val) => val.currency).toString() : null,
-			conversion : props.settings ? props.settings.conversions.find((val) => val.enabled ).currency : null,
-			ticker : props.settings ? props.settings.ticker : true
+			currencies : props.settings ? props.settings.currencies.map((val) => val.name).toString() : null,
+			conversion : props.settings ? props.settings.conversions.find((val) => val.enabled ).name : null,
+			ticker : props.settings ? props.settings.tickerOn : true
 		}
 
 		// Start cost fetch interval
 		if (this.props.settings && this.state.ticker) {
 			// Fetch Cost
-			this.tickerMeter = setInterval(() => this.props.fetchCost(this.state.currencies, this.state.conversion), this.props.settings.tickInterval)
+			this.tickerMeter = setInterval(() => this.props.fetchCost(this.state.currencies, this.state.conversion), this.props.settings.ticker.interval)
 		}
 
 		// Fetch board settings
@@ -79,7 +79,7 @@ class CryptoPriceBoard extends Component {
 	}
 
 	handleTickerToggle(e) {
-		let newSettings = {...this.props.settings, ticker : e.currentTarget.checked }
+		let newSettings = {...this.props.settings, tickerOn : e.currentTarget.checked }
 		this.props.saveSettings(newSettings)
 	}
 
@@ -91,7 +91,7 @@ class CryptoPriceBoard extends Component {
 					<form>
 						<Checkbox
 							onChange={this.handleTickerToggle.bind(this)}
-							checked={this.props.settings.ticker}
+							checked={this.props.settings.tickerOn}
 							name="ticker"
 							label="Auto Refresh"
 						/>
