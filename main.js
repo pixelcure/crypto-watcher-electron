@@ -15,6 +15,7 @@ function createWindow () {
     frameless : true,
     draggable : true,
     width: 275,
+    minWidth: 170,
     height: 790
   })
 

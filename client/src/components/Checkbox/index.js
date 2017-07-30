@@ -13,8 +13,18 @@ class Checkbox extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			checked : props.checked
+			checked : props.checked,
+			value : props.checked,
+			onChange : props.onChange
 		}
+	}
+
+	handleChange(e) {
+		this.setState({
+			value : e.currentTarget.value,
+			checked : e.currentTarget.checked
+		})
+		this.props.onChange(e);
 	}
 
 	render() {
@@ -24,10 +34,11 @@ class Checkbox extends Component {
 					type="checkbox" 
 					id={this.props.name} 
 					name={this.props.name} 
-					checked={this.props.checked}
-					onChange={this.props.onChange}
+					checked={this.state.checked}
+					value={this.state.checked}
+					onChange={this.handleChange.bind(this)}
 				/>
-				<label htmlFor={this.props.name}>
+				<label className={this.state.checked ? 'checked' : ''} htmlFor={this.props.name}>
 					{ this.props.label }
 				</label>
 			</fieldset>

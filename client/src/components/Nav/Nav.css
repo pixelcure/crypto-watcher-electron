@@ -10,6 +10,7 @@ nav {
       padding-right: 0; }
     nav ul li a {
       color: #141D40;
+      font-size: 20px;
       padding: 0 5px; }
       nav ul li a .icon {
         vertical-align: -2px; }

@@ -22,7 +22,7 @@
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   background: transparent;
-  border: 2px solid #FFF;
+  border: 2px solid rgba(255, 255, 255, .65);
   box-shadow: none;
   content: '';
   height: 15px;
@@ -43,9 +43,9 @@
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
     content: '•';
-    color: #FFF;
+    color: rgba(17, 206, 206, 1);
     font-size: 15px;
-    left: -10px;
+    left: -9.5px;
     line-height: 0.8;
     position: absolute;
     top: 4px;

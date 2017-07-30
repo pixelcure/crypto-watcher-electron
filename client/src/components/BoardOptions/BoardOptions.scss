@@ -3,11 +3,14 @@
 //////////////////////////////////////////////
 @import '../../styles/0_utility/mixins';
 @import '../../styles/1_core/vars';
+@import '../../styles/0_utility/_movement';
 
 
 
 // Board Global
 .board-options {
+	animation: .25s fadeIn forwards ease-in;
+	opacity: 0;
 	h1, h3, p, a { color: #FFF; }
 	transition: .3s linear;
 
@@ -18,6 +21,7 @@
 	    line-height: 28px;
 	    margin-bottom: 15px;
 	    padding: 0 15px;
+	    text-shadow: -1px 1px 7px rgba(64, 70, 177, 0.84);
 	    text-transform: uppercase;
 	    @include max-screen(960px){
 	    	font-size: 24px;
@@ -27,6 +31,7 @@
 	    }
 	    @include max-screen(255px){
 	    	font-size: 20px;
+	    	margin-bottom: 0;
 	    	padding: 0 5px;
 	    }
 	}
@@ -86,7 +91,6 @@
 		}
 		label {
 			color: rgba(255, 255, 255, .7);
-			user-select: none;
 			@include max-screen(550px){
 				font-size: 14px;
 			}
@@ -96,6 +100,7 @@
 			@include max-screen(190px){
 				font-size: 10px;
 			}
+			&.checked { color: $white; }
 		}
 		fieldset.ticker-interval {
 			left: -15px;
@@ -104,8 +109,6 @@
 			select {
 				background: rgba(255, 255, 255, .1);
 				border-radius: 5px;
-				user-select: none;
-				// -webkit-appearance:none;
 			}
 		}
 		.third {
@@ -137,11 +140,17 @@
 	padding: 25px 15px;
 	p { 
 		font-size: 14px;
-		margin: 0; 
+		margin: 0;
+		@include max-screen(255px){
+			font-size: 12px;
+		}
 	}
 	small {
 		color: rgba(255, 255, 255, .7);
 		display: block;
 		padding-top: 5px;
+		@include max-screen(255px){
+			font-size: 10px;
+		}
 	}
 } // End App Info

@@ -1,4 +1,22 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes headerFadeOut {
+  0% {
+    background: #ECF0F1; }
+  100% {
+    background: rgba(190, 238, 251, 0.3); } }
+
 .board-options {
+  animation: .25s fadeIn forwards ease-in;
+  opacity: 0;
   transition: .3s linear; }
   .board-options h1, .board-options h3, .board-options p, .board-options a {
     color: #FFF; }
@@ -9,6 +27,7 @@
     line-height: 28px;
     margin-bottom: 15px;
     padding: 0 15px;
+    text-shadow: -1px 1px 7px rgba(64, 70, 177, 0.84);
     text-transform: uppercase; }
     @media screen and (max-width: 960px) {
       .board-options h1 {
@@ -19,6 +38,7 @@
     @media screen and (max-width: 255px) {
       .board-options h1 {
         font-size: 20px;
+        margin-bottom: 0;
         padding: 0 5px; } }
   .board-options h3 {
     color: rgba(255, 255, 255, 0.8);
@@ -68,8 +88,7 @@
       .board-options .settings form {
         padding: 15px 5px; } }
     .board-options .settings form label {
-      color: rgba(255, 255, 255, 0.7);
-      user-select: none; }
+      color: rgba(255, 255, 255, 0.7); }
       @media screen and (max-width: 550px) {
         .board-options .settings form label {
           font-size: 14px; } }
@@ -79,14 +98,15 @@
       @media screen and (max-width: 190px) {
         .board-options .settings form label {
           font-size: 10px; } }
+      .board-options .settings form label.checked {
+        color: #ECF0F1; }
     .board-options .settings form fieldset.ticker-interval {
       left: -15px;
       margin: 10px 0 0 0;
       position: relative; }
       .board-options .settings form fieldset.ticker-interval select {
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 5px;
-        user-select: none; }
+        border-radius: 5px; }
     .board-options .settings form .third {
       display: table-cell;
       padding-right: 15px;
@@ -114,7 +134,13 @@
   .board-options .app-info p {
     font-size: 14px;
     margin: 0; }
+    @media screen and (max-width: 255px) {
+      .board-options .app-info p {
+        font-size: 12px; } }
   .board-options .app-info small {
     color: rgba(255, 255, 255, 0.7);
     display: block;
     padding-top: 5px; }
+    @media screen and (max-width: 255px) {
+      .board-options .app-info small {
+        font-size: 10px; } }

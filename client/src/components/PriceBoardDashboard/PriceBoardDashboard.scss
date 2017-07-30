@@ -1,0 +1,68 @@
+  //////////////////////////////////////////////
+ // DASHBOARD /////////////////////////////////
+//////////////////////////////////////////////
+@import '../../styles/1_core/_vars';
+@import '../../styles/0_utility/_mixins';
+@import '../../styles/0_utility/_movement';
+
+
+
+.dashboard {
+    background: rgba(255, 255, 255, .05);
+    border-radius: 5px;
+    margin: 0 0 1%;
+    overflow: hidden;
+    opacity: 0;
+    padding: 5px 10px;
+    animation: .25s fadeIn forwards ease-in;
+    @include max-screen(414px){
+        margin-bottom: 3%;
+    }
+    li {
+        float: left;
+        &.refresh-feed {
+            float: right;
+            @include max-screen(195px){
+                float: none;
+                text-align: center;
+            }
+        }
+        @include max-screen(195px){
+            float: none;
+            width: 100%;
+            label {
+                font-size: 14px;
+                padding-left: 10px;
+                &:before {
+                    top: 0;
+                }
+                &:after {
+                    left: -9px;
+                    top: 3px;
+                }
+            }
+        }
+    }
+    fieldset {
+        margin: 7px 0 0 20px;
+    }
+    .toggle-feed { display: block; }
+    .refresh-board {
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        color: rgba(17, 206, 206, 1);;
+        font-size: 30px;
+        height: 30px;
+        outline: none;
+        padding: 0;
+        position: relative;
+        top: 2px;
+        transition: .3s ease-in;
+        width: 30px;
+        &:hover {
+            color: $white;
+            transform: rotate(360deg)
+        }
+    }
+} // End Dashboard

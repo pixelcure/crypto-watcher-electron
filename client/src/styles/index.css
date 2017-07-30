@@ -441,7 +441,7 @@ template {
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   background: transparent;
-  border: 2px solid #FFF;
+  border: 2px solid rgba(255, 255, 255, 0.65);
   box-shadow: none;
   content: '';
   height: 15px;
@@ -461,9 +461,9 @@ template {
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '•';
-  color: #FFF;
+  color: #11cece;
   font-size: 15px;
-  left: -10px;
+  left: -9.5px;
   line-height: 0.8;
   position: absolute;
   top: 4px;
@@ -618,7 +618,8 @@ body {
   height: 100vh;
   height: 100%;
   line-height: 1.5em;
-  margin: 0; }
+  margin: 0;
+  user-select: none; }
 
 img {
   height: auto;
@@ -643,6 +644,8 @@ fieldset {
 label {
   color: rgba(255, 255, 255, 0.5);
   padding: 0; }
+  label.checked {
+    color: #FFF; }
 
 select {
   border: 0;
