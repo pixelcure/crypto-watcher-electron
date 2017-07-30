@@ -38,7 +38,7 @@ class Checkbox extends Component {
 					value={this.state.checked}
 					onChange={this.handleChange.bind(this)}
 				/>
-				<label htmlFor={this.props.name}>
+				<label className={this.state.checked ? 'checked' : ''} htmlFor={this.props.name}>
 					{ this.props.label }
 				</label>
 			</fieldset>

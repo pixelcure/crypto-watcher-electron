@@ -3,6 +3,7 @@
 //////////////////////////////////////////////
 @import '../../styles/1_core/_vars';
 @import '../../styles/0_utility/_mixins';
+@import '../../styles/0_utility/_movement';
 
 
 
@@ -11,7 +12,9 @@
     border-radius: 5px;
     margin: 0 0 1%;
     overflow: hidden;
+    opacity: 0;
     padding: 5px 10px;
+    animation: .25s fadeIn forwards ease-in;
     @include max-screen(414px){
         margin-bottom: 3%;
     }
@@ -48,22 +51,18 @@
         border: 0;
         background: transparent;
         cursor: pointer;
-        color: $white;
+        color: rgba(17, 206, 206, 1);;
         font-size: 30px;
         height: 30px;
         outline: none;
         padding: 0;
+        position: relative;
+        top: 2px;
         transition: .3s ease-in;
         width: 30px;
-        button {
-            position: relative;
-            top: 3px;
-        }
         &:hover {
+            color: $white;
             transform: rotate(360deg)
-        }
-        &:target {
-            transform: rotate(-360deg)
         }
     }
 } // End Dashboard

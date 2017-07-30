@@ -1,9 +1,27 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes headerFadeOut {
+  0% {
+    background: #ECF0F1; }
+  100% {
+    background: rgba(190, 238, 251, 0.3); } }
+
 .dashboard {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 5px;
   margin: 0 0 1%;
   overflow: hidden;
-  padding: 5px 10px; }
+  opacity: 0;
+  padding: 5px 10px;
+  animation: .25s fadeIn forwards ease-in; }
   @media screen and (max-width: 414px) {
     .dashboard {
       margin-bottom: 3%; } }
@@ -35,17 +53,15 @@
     border: 0;
     background: transparent;
     cursor: pointer;
-    color: #ECF0F1;
+    color: #11cece;
     font-size: 30px;
     height: 30px;
     outline: none;
     padding: 0;
+    position: relative;
+    top: 2px;
     transition: .3s ease-in;
     width: 30px; }
-    .dashboard .refresh-board button {
-      position: relative;
-      top: 3px; }
     .dashboard .refresh-board:hover {
+      color: #ECF0F1;
       transform: rotate(360deg); }
-    .dashboard .refresh-board:target {
-      transform: rotate(-360deg); }
