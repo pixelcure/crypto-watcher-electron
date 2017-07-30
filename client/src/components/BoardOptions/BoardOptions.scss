@@ -114,8 +114,8 @@
 			&:after {
 				bottom: 0;
 				content: '▼';
-				color: $teal;
-				font-size: 13px;
+				color: rgba(17, 206, 206, 1);
+				font-size: 12px;
 				position: absolute;
 				pointer-events: none;
 				right: 0;
@@ -130,7 +130,6 @@
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				background: transparent;
-				border-radius: 5px;
 				padding: 3px 10px;
 				@include max-screen(195px){
 					font-size: 12px;

@@ -112,8 +112,8 @@
       .board-options .settings form fieldset.ticker-interval:after {
         bottom: 0;
         content: '▼';
-        color: #008080;
-        font-size: 13px;
+        color: #11cece;
+        font-size: 12px;
         position: absolute;
         pointer-events: none;
         right: 0;
@@ -127,7 +127,6 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         background: transparent;
-        border-radius: 5px;
         padding: 3px 10px; }
         @media screen and (max-width: 195px) {
           .board-options .settings form fieldset.ticker-interval select {

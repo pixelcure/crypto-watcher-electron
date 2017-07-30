@@ -26,7 +26,7 @@
   margin: 0;
   padding: 0; }
   .pricecard-details .card-detail {
-    animation: .5s fadeIn forwards;
+    animation: .5s fadeIn forwards ease-in;
     background: #ECF0F1;
     background: -webkit-linear-gradient(top, #c2e3f8 0%, #efefef 100%);
     border-radius: 5px;
@@ -38,14 +38,14 @@
     .pricecard-details .card-detail:last-child {
       margin-bottom: 0; }
   .pricecard-details .card-detail:nth-child(1) {
-    animation-delay: 0.25s;
-    animation-duration: 0.25s; }
+    animation-delay: 0.18182s;
+    animation-duration: 0.18182s; }
   .pricecard-details .card-detail:nth-child(2) {
-    animation-delay: 0.5s;
-    animation-duration: 0.5s; }
+    animation-delay: 0.36364s;
+    animation-duration: 0.36364s; }
   .pricecard-details .card-detail:nth-child(3) {
-    animation-delay: 0.75s;
-    animation-duration: 0.75s; }
+    animation-delay: 0.54545s;
+    animation-duration: 0.54545s; }
 
 .pricecard-details .symbol-outer {
   border-right: 1px solid #bfbfbf;
