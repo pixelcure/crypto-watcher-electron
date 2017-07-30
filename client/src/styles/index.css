@@ -612,6 +612,7 @@ body {
   -moz-osx-font-smoothing: auto;
   background: #141D40;
   color: #141D40;
+  cursor: default;
   font-family: "Nunito Sans", sans-serif;
   font-size: 100%;
   font-size: 16px;
@@ -624,6 +625,9 @@ body {
 img {
   height: auto;
   width: 100%; }
+
+a, button, label, select {
+  cursor: pointer; }
 
 ul {
   padding: 0;
