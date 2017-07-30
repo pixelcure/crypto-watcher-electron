@@ -24,7 +24,7 @@
 	margin: 0;
 	padding: 0;
 	.card-detail {
-		animation: .5s fadeIn forwards;
+		animation: .5s fadeIn forwards ease-in;
 		background: $white;
 		background: -webkit-linear-gradient(top, #c2e3f8 0%,rgba(239,239,239, 1) 100%);
 		border-radius: 5px;
@@ -38,8 +38,8 @@
 	// Stagger card animation
 	@for $i from 1 through 3 {
 		.card-detail:nth-child(#{$i}) {
-			animation-delay: #{$i/4.0+'s'};
-			animation-duration: #{$i/4+'s'};
+			animation-delay: #{$i/5.5+'s'};
+			animation-duration: #{$i/5.5+'s'};
 		}
 	}
 } // End Price Card Details
