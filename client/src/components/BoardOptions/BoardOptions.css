@@ -28,7 +28,6 @@
     line-height: 28px;
     margin-bottom: 15px;
     padding: 0 15px;
-    text-shadow: -1px 1px 7px rgba(64, 70, 177, 0.84);
     text-transform: uppercase; }
     @media screen and (max-width: 960px) {
       .board-options h1 {
