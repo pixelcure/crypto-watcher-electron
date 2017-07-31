@@ -6,104 +6,104 @@
 
 // Available Options
 export const options = {
-    currencies: [
+    currencies : [
 	    {
 	        name : 'ETH',
 	        label : 'Ethereum',
-	        enabled: true
+	        enabled : true
 	    },
 	    {
 	        name : 'LTC',
 	        label : 'Litecoin',
-	        enabled: true
+	        enabled : true
 	    },
 	    {
 	        name : 'BTC',
 	        label : 'Bitcoin',
-	        enabled: true
+	        enabled : true
 	    }
     ],
-    conversions: [
+    conversions : [
 	    {
 	        name : 'USD',
 	        label : 'US Dollar',
-	        enabled: true
+	        enabled : true
 	    },
 	    {
 	        name : 'EUR',
 	        label : 'Euro',
-	        enabled: false
+	        enabled : false
 	    }
     ],
-    tickerIntervals: [
+    tickerIntervals : [
 	    {
-	        interval: 5000,
-	        label: '5 seconds',
-	        enabled: false
+	        interval : 5000,
+	        label : '5 seconds',
+	        enabled : false
 	    },
 	    {
-	        interval: 10000,
-	        label: '10 seconds',
-	        enabled: true
+	        interval : 10000,
+	        label : '10 seconds',
+	        enabled : true
 	    },
 	    {
-	        interval: 20000,
-	        label: '20 seconds',
-	        enabled: false
+	        interval : 20000,
+	        label : '20 seconds',
+	        enabled : false
 	    },
 	    {
-	        interval: 30000,
-	        label: '30 seconds',
-	        enabled: false
+	        interval : 30000,
+	        label : '30 seconds',
+	        enabled : false
 	    },
 	    {
-	        interval: 60000,
-	        label: '1 minute',
-	        enabled: false
+	        interval : 60000,
+	        label : '1 minute',
+	        enabled : false
 	    },
 	    {
-	        interval: 120000,
-	        label: '2 minutes',
-	        enabled: false
+	        interval : 120000,
+	        label : '2 minutes',
+	        enabled : false
 	    },
 	    {
-	        interval: 180000,
-	        label: '3 minutes',
-	        enabled: false
+	        interval : 180000,
+	        label : '3 minutes',
+	        enabled : false
 	    },
 	    {
-	        interval: 240000,
-	        label: '4 minutes',
-	        enabled: false
+	        interval : 240000,
+	        label : '4 minutes',
+	        enabled : false
 	    },
 	    {
-	        interval: 300000,
-	        label: '5 minutes',
-	        enabled: false
+	        interval : 300000,
+	        label : '5 minutes',
+	        enabled : false
 	    },
 	    {
-	        interval: 600000,
-	        label: '10 minutes',
-	        enabled: false
+	        interval : 600000,
+	        label : '10 minutes',
+	        enabled : false
 	    },
 	    {
-	        interval: 900000,
-	        label: '15 minutes',
-	        enabled: false
+	        interval : 900000,
+	        label : '15 minutes',
+	        enabled : false
 	    },
 	    {
-	        interval: 1200000,
-	        label: '20 minutes',
-	        enabled: false
+	        interval : 1200000,
+	        label : '20 minutes',
+	        enabled : false
 	    },
 	    {
-	        interval: 1800000,
-	        label: '30 minutes',
-	        enabled: false
+	        interval : 1800000,
+	        label : '30 minutes',
+	        enabled : false
 	    }
     ],
-    ticker: true,
-    detailOptions: [
+    tickerOn : true,
+    detailOptions : [
 	    {
 	        name : 'MARKET',
 	        label : 'Market',
@@ -216,9 +216,9 @@ export const defaultSettings = {
 	    }
 	],
 	ticker : {
-        interval: 10000,
-        label: '10 seconds',
-        enabled: true
+        interval : 10000,
+        label : '10 seconds',
+        enabled : true
     },
 	tickerOn : true
 }
