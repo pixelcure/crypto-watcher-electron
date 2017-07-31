@@ -13,9 +13,9 @@ import CardDetail from '../CardDetail';
 // <PriceCardDetails /> Element
 const PriceCardDetails = props => {
 	return(
-		<ul className="pricecard-details">
+		<section className="pricecard-details">
 			{ props.priceCards.map((value, key) => <CardDetail {...value} key={key} conversion={props.conversion} />) }
-		</ul>
+		</section>
 	);
 }
 
