@@ -26,14 +26,21 @@ export default function (state={}, action){
 		}
 		case FETCH_SETTINGS : {
 
+			// Check to see if we have saved settings, otherwise use the default
+			const settings = localStorage.getItem('crypto-observer-settings') ? JSON.parse(localStorage.getItem('crypto-observer-settings')) : defaultSettings
+
 			return {
 				...state,
-				settings : defaultSettings
-			}
+				settings
+				// settings : defaultSettings
+			};
 
 		}
 		case SAVE_SETTINGS : {
-
+			
+			// Save in local storage, then in state
+			localStorage.setItem('crypto-observer-settings', JSON.stringify(action.payload))
+			
 			return {
 				...state,
 				settings : action.payload
