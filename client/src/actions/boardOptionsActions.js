@@ -15,5 +15,18 @@ export function fetchSettings (){
 export function fetchOptions (){
 	return (dispatch) => {
 		dispatch({type : 'FETCH_DEFAULT_OPTIONS'})
+		// Also get settings for comparisons
+		dispatch({type : 'FETCH_SETTINGS'})
+	};
+}
+
+// Action to save settings
+export function saveSettings (settings){
+	return (dispatch) => {
+		// Fetch Settings
+		dispatch({
+			type : 'SAVE_SETTINGS',
+			payload : settings
+		});
 	};
 }

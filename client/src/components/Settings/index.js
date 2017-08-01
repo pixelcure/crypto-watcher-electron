@@ -16,8 +16,14 @@ class Settings extends Component {
 		this.props.fetchOptions()
 	}
 	
-	handleChange(e) {
-		console.log(e);
+	handleChange(payload) {
+		// New settings
+		let newSettings
+		// If interval (only unique change), dispatch new ticker settings
+		// eslint-disable-next-line
+		payload.interval !== undefined ? newSettings = {...this.props.settings, ticker : payload } : ''
+		// Dispatch new settings
+		this.props.saveSettings(newSettings);
 	}
 
 	// Render Ticker Options
@@ -40,6 +46,7 @@ class Settings extends Component {
 							name="tickerInterval"
 							cssClass="ticker-interval"
 							onChange={this.handleChange.bind(this)}
+							ticker={this.props.settings.ticker}
 						/>
 					</li>
 				</ul>

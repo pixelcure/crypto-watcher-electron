@@ -22,8 +22,8 @@ function SettingsContainer(EnhancedComponent) {
 
   // mapStateToProps
   const mapStateToProps = (state) => ({
-    settings : state.settings,
-    options : state.settings.options
+    options : state.settings.options,
+    settings : state.settings.settings
   })
   
   // Connect HOC passing in Settings
