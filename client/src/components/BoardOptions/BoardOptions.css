@@ -130,6 +130,8 @@
         @media screen and (max-width: 195px) {
           .board-options .settings form fieldset.ticker-interval select {
             font-size: 12px; } }
+        .board-options .settings form fieldset.ticker-interval select option {
+          color: #141D40; }
     .board-options .settings form .third {
       display: table-cell;
       padding-right: 15px;

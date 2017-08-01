@@ -133,6 +133,7 @@
 				@include max-screen(195px){
 					font-size: 12px;
 				}
+				option { color: $navy; }
 			}
 		}
 		.third {

@@ -36,46 +36,21 @@ export const options = {
 	    }
     ],
     tickerIntervals : [
-	    {
-	        interval : 5000,
-	        label : '5 seconds',
-	        enabled : false
-	    },
-	    {
-	        interval : 10000,
-	        label : '10 seconds',
-	        enabled : true
-	    },
-	    {
-	        interval : 20000,
-	        label : '20 seconds',
-	        enabled : false
-	    },
-	    {
-	        interval : 30000,
-	        label : '30 seconds',
-	        enabled : false
-	    },
-	    {
-	        interval : 60000,
-	        label : '1 minute',
-	        enabled : false
-	    },
-	    {
-	        interval : 120000,
-	        label : '2 minutes',
-	        enabled : false
-	    },
-	    {
-	        interval : 180000,
-	        label : '3 minutes',
-	        enabled : false
-	    },
-	    {
-	        interval : 240000,
-	        label : '4 minutes',
-	        enabled : false
-	    },
+		{
+		    interval : 10000,
+		    label : '10 seconds',
+		    enabled : false
+		},
+		{
+		    interval : 30000,
+		    label : '30 seconds',
+		    enabled : false
+		},
+		{
+		    interval : 60000,
+		    label : '1 minute',
+		    enabled : false
+		},
 	    {
 	        interval : 300000,
 	        label : '5 minutes',
@@ -89,11 +64,6 @@ export const options = {
 	    {
 	        interval : 900000,
 	        label : '15 minutes',
-	        enabled : false
-	    },
-	    {
-	        interval : 1200000,
-	        label : '20 minutes',
 	        enabled : false
 	    },
 	    {
@@ -216,9 +186,9 @@ export const defaultSettings = {
 	    }
 	],
 	ticker : {
-        interval : 10000,
-        label : '10 seconds',
-        enabled : true
-    },
+		interval : 300000,
+		label : '5 minutes',
+		enabled : true
+	},
 	tickerOn : true
 }
